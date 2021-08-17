@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 
+  nombre: MyString
+  referencia: MyString
+  stock: MyString
+  remitente: MyText
+  tipo: MyString
+
+two:
+  codigo: 
+  nombre: MyString
+  referencia: MyString
+  stock: MyString
+  remitente: MyText
+  tipo: MyString

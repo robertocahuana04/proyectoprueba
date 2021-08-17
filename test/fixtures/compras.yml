@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigoproducto: 
+  nombredelcliente: MyString
+  identificaciondelcliente: 
+  fechadecompra: 2021-08-17
+  tipoproducto: MyText
+  formadepago: false
+
+two:
+  codigoproducto: 
+  nombredelcliente: MyString
+  identificaciondelcliente: 
+  fechadecompra: 2021-08-17
+  tipoproducto: MyText
+  formadepago: false

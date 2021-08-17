@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  peticiones: MyText
+  quejas: MyText
+
+two:
+  peticiones: MyText
+  quejas: MyText
