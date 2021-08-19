@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identificaciondelclinte: 1
+  codigo: 1
+  nombredelcliente: MyString
+  productoadquirido: MyString
+  fechadecompra: 2021-08-19
+  estadodelproducto: MyString
+
+two:
+  identificaciondelclinte: 1
+  codigo: 1
+  nombredelcliente: MyString
+  productoadquirido: MyString
+  fechadecompra: 2021-08-19
+  estadodelproducto: MyString

@@ -1,2 +1,0 @@
-class reclamos < ApplicationRecord
-end
