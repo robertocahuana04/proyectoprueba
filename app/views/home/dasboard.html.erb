@@ -1,0 +1,11 @@
+<h1>Home#dasboard</h1>
+<p>Find me in app/views/home/dasboard.html.erb</p>
+
+
+
+<%= link_to "Ver todos los productos", productos_index_path %>
+
+<%= form_for(current_user,
+    url: destroy_user_session_path, html: { method: :delete }) do |f| %>
+    <%= f.submit "Log out" %>
+<% end %>

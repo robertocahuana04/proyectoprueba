@@ -1,2 +1,0 @@
-class Registrotrabajadore < ApplicationRecord
-end

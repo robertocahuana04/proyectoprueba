@@ -1,2 +1,0 @@
-class Compra < ApplicationRecord
-end
