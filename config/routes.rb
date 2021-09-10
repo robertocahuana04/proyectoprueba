@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#dasboard"
 
+  resources :proveedores
+  resources :reclamos
+ 
+ 
+
+  
   resources :productos
   # devise_scope :user do
   #   get '/logout',  :to => 'sessions#destroy'

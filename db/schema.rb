@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_02_025425) do
+ActiveRecord::Schema.define(version: 2021_09_10_192949) do
+
+  create_table "personas", force: :cascade do |t|
+    t.integer "cedula"
+    t.string "genero"
+    t.text "fecha_nacimiento"
+    t.integer "telefono"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "productos", force: :cascade do |t|
     t.string "codigo"
@@ -19,6 +28,31 @@ ActiveRecord::Schema.define(version: 2021_09_02_025425) do
     t.integer "stock"
     t.string "remitente"
     t.integer "tipo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "proveedores", force: :cascade do |t|
+    t.integer "codigo"
+    t.string "nombre"
+    t.string "correoelectronico"
+    t.integer "telefono"
+    t.string "direccion"
+    t.string "ciudad"
+    t.text "destinario"
+    t.integer "organizacione_id"
+    t.integer "persona_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reclamos", force: :cascade do |t|
+    t.integer "codigo"
+    t.integer "identificacion_del_cliente"
+    t.string "nombre_del_cliente"
+    t.string "producto_adquirido"
+    t.date "fecha_de_compra"
+    t.boolean "estado_del_producto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

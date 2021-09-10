@@ -1,11 +1,44 @@
-<h1>Home#dasboard</h1>
-<p>Find me in app/views/home/dasboard.html.erb</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
 
 
 
-<%= link_to "Ver todos los productos", productos_index_path %>
+<body>
 
-<%= form_for(current_user,
-    url: destroy_user_session_path, html: { method: :delete }) do |f| %>
-    <%= f.submit "Log out" %>
-<% end %>
+    <header>
+        DIDASTICO DE LA COSTA
+    </header>
+
+    
+
+    <section>
+        <%= form_for(current_user,
+            url: destroy_user_session_path, html: { method: :delete }) do |f| %>
+            <%= f.submit "Cerrar sesión" %>
+            <%= link_to "Ver todos los productos", productos_index_path %>
+        <% end %>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
