@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :proveedores
   resources :reclamos
-  
+  resources :registrodetrabajadores
  
  
 
