@@ -1,0 +1,2 @@
+class Registrodetrabajadore < ApplicationRecord
+end

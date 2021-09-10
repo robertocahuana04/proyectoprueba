@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_192949) do
+ActiveRecord::Schema.define(version: 2021_09_10_215850) do
 
   create_table "personas", force: :cascade do |t|
     t.integer "cedula"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 2021_09_10_192949) do
     t.string "producto_adquirido"
     t.date "fecha_de_compra"
     t.boolean "estado_del_producto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "registrodetrabajadores", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "edad"
+    t.string "cargo"
+    t.integer "telefono"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

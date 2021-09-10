@@ -1,7 +1,7 @@
 class ReclamosController < ApplicationController
 
     def index
-        @reclamo = Reclamo.new   
+        @reclamo = Reclamo.index  
     end
 
     def create

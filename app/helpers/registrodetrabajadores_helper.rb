@@ -1,0 +1,2 @@
+module RegistrodetrabajadoresHelper
+end
