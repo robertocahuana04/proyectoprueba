@@ -1,23 +1,25 @@
 class ReclamosController < ApplicationController
+    def new
+        @reclamo = Reclamo.new
+    end
 
     def index
-        @reclamo = Reclamo.index  
+       @reclamo = Reclamo.all
+    end
+
+    def show
+          
     end
 
     def create
-
-        @Reclamo = Reclamo.new( reclamo_params)
-        if @Reclamo.save 
-            redirect_to reclamo_path(@Reclamo)
+        @reclamo = Reclamo.new( reclamo_params)
+        if @reclamo.save 
+            redirect_to reclamo_path(@reclamo)
         else
             render :new
         end
     end
 
-    def show
-        
-    end
-     
     private
 
     def reclamo_params
@@ -29,5 +31,5 @@ class ReclamosController < ApplicationController
           :fecha_de_compra,
           :estado_del_producto,
         )
-      end
+    end
 end

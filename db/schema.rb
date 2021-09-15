@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_215850) do
+ActiveRecord::Schema.define(version: 2021_09_15_211808) do
 
   create_table "personas", force: :cascade do |t|
     t.integer "cedula"
@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 2021_09_10_215850) do
   end
 
   create_table "productos", force: :cascade do |t|
-    t.string "codigo"
+    t.integer "codigo"
     t.string "nombre"
     t.string "referencia"
     t.integer "stock"
     t.string "remitente"
-    t.integer "tipo_id"
+    t.string "tipo_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -66,6 +66,18 @@ ActiveRecord::Schema.define(version: 2021_09_10_215850) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "registros", force: :cascade do |t|
+    t.integer "identificacion"
+    t.string "nombre"
+    t.string "correo_electronico"
+    t.string "fecha_de_nacimiento"
+    t.string "direccion"
+    t.string "cargo"
+    t.string "ciudad"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tipos", force: :cascade do |t|
     t.string "tipo"
     t.boolean "estado"
@@ -83,6 +95,15 @@ ActiveRecord::Schema.define(version: 2021_09_10_215850) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.integer "identificacion"
+    t.string "nombre"
+    t.integer "telefono"
+    t.string "direccion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

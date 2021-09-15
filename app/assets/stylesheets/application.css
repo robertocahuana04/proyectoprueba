@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+*body{
+  margin: 0px;
+  padding: 0px;
+}
+.container{
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  background: aqua;
+}
+
+.titulo{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 100;
+}

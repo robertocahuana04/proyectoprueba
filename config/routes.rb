@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get 'productos/show'
   devise_for :users
   root to: "home#dasboard"
-
+  
+  
   resources :proveedores
-  resources :reclamos
   resources :registrodetrabajadores
- 
+  resources :reclamos
+  resources :personas
  
 
   
