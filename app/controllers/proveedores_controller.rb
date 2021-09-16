@@ -1,4 +1,5 @@
 class ProveedoresController < ApplicationController
+
     def new
         @proveedor = Proveedor.new   
     end
