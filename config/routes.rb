@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'productos/index'
   get 'productos/show'
   devise_for :users
-  root to: "home#landing"
+  root to: "home#dasboard"
   
   
   resources :proveedores
