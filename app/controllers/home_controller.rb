@@ -1,12 +1,9 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!, only: [:dasboard]
+  before_action :authenticate_user!
 
   def dasboard
 
+    
   end
-
-  def landing
-
-  end  
 end
