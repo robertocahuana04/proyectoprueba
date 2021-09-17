@@ -1,1 +1,12 @@
-<h3>fsdgdfgdg</h3>
+<h1 class="titulo">nuevo personas</h1>
+<div class="row">
+    <div class="col-md-4">
+        <%= simple_form_for @persona do |f| %>
+            <%= f.input :cedula %>
+            <%= f.input :genero %>
+            <%= f.input :fecha_nacimiento %>
+            <%= f.input :telefono %>
+            <%= f.button :submit %>
+        <% end %>
+    </div>
+</div> 

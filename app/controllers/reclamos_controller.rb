@@ -8,7 +8,7 @@ class ReclamosController < ApplicationController
     end
 
     def show
-          
+        @reclamo = Reclamo.find(params[:id])
     end
 
     def create
