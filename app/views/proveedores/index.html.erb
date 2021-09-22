@@ -1,16 +1,26 @@
 <h1>Listing proveedor</h1>
-<%= link_to 'New proveedor', new_article_path %>
+<%= link_to 'New proveedor', new_proveedor_path %>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>codigo</th>
+    <th>nombre</th>
+    <th>correoelectronico</th>
+    <th>telefono</th>
+    <th>direccion</th>
+    <th>ciudad</th>
+    <th>destinario</th>
     <th colspan="3"></th>
   </tr>
  
 <% @proveedor.each do |proveedor| %>
   <tr>
-    <td><%= article.title %></td>
-    <td><%= article.text %></td>
+    <td><%= proveedor.codigo %></td>
+    <td><%= proveedor.nombre %></td>
+    <td><%= proveedor.correoelectronico %></td>
+    <td><%= proveedor.telefono %></td>
+    <td><%= proveedor.direccion %></td>
+    <td><%= proveedor.ciudad %></td>
+    <td><%= proveedor.destinario %></td>
     <td><%= link_to 'Show', proveedor_path(proveedor) %></td>
     <td><%= link_to 'Edit', edit_proveedor_path(proveedor) %></td>
     <td><%= link_to 'Destroy', proveedor_path(proveedor),

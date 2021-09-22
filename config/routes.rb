@@ -2,14 +2,15 @@ Rails.application.routes.draw do
 
   get 'productos/index'
   get 'productos/show'
-  devise_for :users
+  #devise_for :users
   root to: "home#dasboard"
-  
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
   
   resources :proveedores
   resources :registrodetrabajadores
   resources :reclamos
   resources :personas
+  resources :compras
  
 
   

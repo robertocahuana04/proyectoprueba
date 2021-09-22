@@ -6,7 +6,7 @@ class CreateProductos < ActiveRecord::Migration[6.1]
       t.string :referencia
       t.integer :stock
       t.string :remitente
-      t.string :tipo_id
+      t.integer :tipo_id
 
       t.timestamps
     end

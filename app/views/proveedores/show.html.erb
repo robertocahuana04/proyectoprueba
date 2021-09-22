@@ -1,13 +1,23 @@
-<h1>show</h1>
+<h1>listado de proveedor</h1>
+<table> 
+    <tr>
+    <td><%= @proveedor.codigo%></td>
+    <td><%= @proveedor.nombre%></td>
+    <td><%= @proveedor.correoelectronico%></td>
+    <td><%= @proveedor.telefono%></td>
+    <td><%= @proveedor.direccion%></td>
+    <td><%= @proveedor.ciudad%></td>
+    <td><%= @proveedor.destinario%></td>
+    </tr>
+</table>    
+    
+<%= link_to 'New proveedor', new_proveedor_path %>
+    
+    
+    
+    
+    
+    
 
-<div>
-    <%= @proveedor.codigo%>
-    <%= @proveedor.nombre%>
-    <%= @proveedor.correoelectronico%>
-    <%= @proveedor.telefono%>
-    <%= @proveedor.direccion%>
-    <%= @proveedor.ciudad%>
-    <%= @proveedor.destinario%>
-</div>
 
 
