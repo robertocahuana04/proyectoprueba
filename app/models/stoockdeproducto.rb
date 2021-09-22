@@ -1,0 +1,2 @@
+class Stoockdeproducto < ApplicationRecord
+end

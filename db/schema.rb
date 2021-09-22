@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_163712) do
+ActiveRecord::Schema.define(version: 2021_09_22_221353) do
 
   create_table "compras", force: :cascade do |t|
     t.integer "codigo_producto"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2021_09_21_163712) do
     t.date "fecha_de_compra"
     t.string "tipo_producto"
     t.string "forma_de_pago"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "organizaciones", force: :cascade do |t|
+    t.string "tipo_de_organizacion"
+    t.string "numero_de_empleado"
+    t.string "representantes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -85,6 +93,17 @@ ActiveRecord::Schema.define(version: 2021_09_21_163712) do
     t.string "direccion"
     t.string "cargo"
     t.string "ciudad"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stoockdeproductos", force: :cascade do |t|
+    t.integer "codigo"
+    t.string "proveedor"
+    t.integer "cantidad_existente"
+    t.string "referencia"
+    t.string "tipo"
+    t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

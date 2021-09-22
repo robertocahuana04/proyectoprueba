@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :reclamos
   resources :personas
   resources :compras
+  resources :tipos
+  resources :organizaciones
+  resources :stoockdeproductos 
  
 
   

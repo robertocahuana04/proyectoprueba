@@ -1,0 +1,14 @@
+<h1 class="page-header">Registro de stoockdeproductos</h1>
+<div class="container">
+    <div class="navbar-toggler">
+        <%= simple_form_for @stoockdeproducto do |f| %>
+            <%= f.input :codigo %>
+            <%= f.input :nombre %>
+            <%= f.input :cantidad_existente %>
+            <%= f.input :referencia %>
+            <%= f.input :tipo %>
+            <%= f.input :proveedor %>
+            <%= f.button :submit %>
+        <% end %>
+    </div>
+</div>

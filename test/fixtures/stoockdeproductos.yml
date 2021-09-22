@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 1
+  proveedor: MyString
+  cantidad_existente: 1
+  referencia: MyString
+  tipo: MyString
+  nombre: MyString
+
+two:
+  codigo: 1
+  proveedor: MyString
+  cantidad_existente: 1
+  referencia: MyString
+  tipo: MyString
+  nombre: MyString
