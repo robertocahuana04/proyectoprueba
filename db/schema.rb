@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.date "fecha_de_compra"
     t.string "tipo_producto"
     t.string "forma_de_pago"
+    t.integer "stoockdeproducto_id"
+    t.integer "producto_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -132,6 +134,8 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.string "nombre"
     t.integer "telefono"
     t.string "direccion"
+    t.integer "reclamo_id"
+    t.integer "registrodetrabajadore_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -5,6 +5,8 @@ class CreateUsuarios < ActiveRecord::Migration[6.1]
       t.string :nombre
       t.integer :telefono
       t.string :direccion
+      t.integer :reclamo_id
+      t.integer :registrodetrabajadore_id
 
       t.timestamps
     end
