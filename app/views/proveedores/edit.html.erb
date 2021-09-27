@@ -1,1 +1,13 @@
-<h1 class="titulo">editar proveedor</h1>
+<h1>editar proveedor</h1>
+<%= link_to 'listado proveedor', proveedores_path %>
+<table> 
+    <tr>
+    <td><%= @proveedor.codigo%></td>
+    <td><%= @proveedor.nombre%></td>
+    <td><%= @proveedor.correoelectronico%></td>
+    <td><%= @proveedor.telefono%></td>
+    <td><%= @proveedor.direccion%></td>
+    <td><%= @proveedor.ciudad%></td>
+    <td><%= @proveedor.destinario%></td>
+    </tr>
+</table> 

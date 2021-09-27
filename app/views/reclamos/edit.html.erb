@@ -1,4 +1,6 @@
-<h1>hola2</h1>
+<h2>listado</h2>
+<%= link_to 'listado reclamos', reclamo_path %>
+<%= link_to 'Back', reclamos_path %>
 <table>
     <tr>
         <td><%= @reclamo.codigo%></td>
@@ -9,6 +11,3 @@
         <td><%= @reclamo.estado_del_producto%></td>
     </tr> 
 </table>
-
-<%= link_to 'New reclamo', new_reclamo_path %>
-<%= link_to 'Back', reclamos_path %>

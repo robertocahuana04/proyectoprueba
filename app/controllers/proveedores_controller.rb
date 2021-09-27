@@ -6,6 +6,9 @@ class ProveedoresController < ApplicationController
 
     def index
         @proveedor = Proveedor.all
+        respond_to do |format|
+            format.html
+            format.xml { render :xml => @proveedor }end
     end
 
     def show

@@ -17,7 +17,7 @@ class ProductosController < ApplicationController
   end
 
   def create
-    @producto = Producto.new( producto_params)
+    @producto = Producto.new( producto_params[:id])
     if @producto.save 
         redirect_to producto_path(@producto)
     else

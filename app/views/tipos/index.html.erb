@@ -1,0 +1,20 @@
+<h1>Listing tipo</h1>
+<%= link_to 'New tipo', new_tipo_path %>
+<table>
+  <tr>
+    <th>tipo</th>
+    <th>estado</th>
+    <th colspan="6"></th>
+  </tr>
+ 
+  <% @tipo.each do |tipo| %>
+    <tr>
+      <td><%= tipo.tipo %></td>
+      <td><%= tipo.estado %></td>
+      <td><%= link_to 'Show', tipo_path(tipo) %></td>
+      <td><%= link_to 'Editar', edit_tipo_path(tipo) %></td>
+      <td><%= link_to 'Destroy', tipo_path(tipo),
+      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :tipos
   resources :organizaciones
   resources :stoockdeproductos 
- 
 
   
   resources :productos

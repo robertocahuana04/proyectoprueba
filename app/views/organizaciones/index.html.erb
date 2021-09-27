@@ -1,1 +1,22 @@
-<h3>index</h3>
+<h1>Listing reclamos</h1>
+<%= link_to 'New organizacione', new_organizacione_path %>
+<table>
+  <tr>
+    <th>tipo_de_organizacion</th>
+    <th>numero_de_empleado</th>
+    <th>representantes</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @organizacione.each do |organizacione| %>
+    <tr>
+      <td><%= organizacione.tipo_de_organizacion %></td>
+      <td><%= organizacione.numero_de_empleado %></td>
+      <td><%= organizacione.representantes %></td>
+      <td><%= link_to 'Show', organizacione_path(organizacione) %></td>
+      <td><%= link_to 'Editar', edit_organizacione_path(organizacione) %></td>
+      <td><%= link_to 'Destroy', organizacione_path(organizacione),
+      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+    </tr>
+  <% end %>
+</table>
