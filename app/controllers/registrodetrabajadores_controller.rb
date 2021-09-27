@@ -29,13 +29,10 @@ class RegistrodetrabajadoresController < ApplicationController
 
     def registrodetrabajadore_params
         params.require(:registrodetrabajadore).permit(
-          :codigo,
           :nombre,
-          :correoelectronico,
+          :edad,
+          :cargo,
           :telefono,
-          :direccion,
-          :ciudad,
-          :destinario,
         )
     end
 
@@ -53,13 +50,10 @@ class RegistrodetrabajadoresController < ApplicationController
 
     def registrodetrabajadore_params
         params.require(:registrodetrabajadore).permit(
-          :codigo,
           :nombre,
-          :correoelectronico,
+          :edad,
+          :cargo,
           :telefono,
-          :direccion,
-          :ciudad,
-          :destinario,
         )
     end
 
