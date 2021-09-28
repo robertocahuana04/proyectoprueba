@@ -1,12 +1,11 @@
 <h1>borrar</h1>
-<table> 
-    <tr>
-    <td><%= @proveedor.codigo%></td>
-    <td><%= @proveedor.nombre%></td>
-    <td><%= @proveedor.correoelectronico%></td>
-    <td><%= @proveedor.telefono%></td>
-    <td><%= @proveedor.direccion%></td>
-    <td><%= @proveedor.ciudad%></td>
-    <td><%= @proveedor.destinario%></td>
-    </tr>
-</table>
+<%= form_with model: @proveedor do |form| %>
+  <%= form.text_field :codigo, placeholder: "codigo" %>
+  <%= form.text_field :nombre, placeholder: "nombre" %>
+  <%= form.text_field :correoelectronico, placeholder: "correoelectronico" %>
+  <%= form.text_field :telefono, placeholder: "telefono" %>
+  <%= form.text_field :direccion, placeholder: "direccion" %>
+  <%= form.text_field :ciudad, placeholder: "ciudad" %>
+  <%= form.text_field :destinario, placeholder: "destinario" %>
+  <%= form.submit %>
+<% end %>

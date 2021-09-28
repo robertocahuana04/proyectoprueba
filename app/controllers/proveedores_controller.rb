@@ -1,4 +1,5 @@
 class ProveedoresController < ApplicationController
+    
 
     def new
         @proveedor = Proveedor.new   
@@ -8,21 +9,24 @@ class ProveedoresController < ApplicationController
         @proveedor = Proveedor.all
         respond_to do |format|
             format.html
-            format.xml { render :xml => @proveedor }end
+            format.xml { render :xml => @proveedor }
+        end
     end
 
     def show
         @proveedor = Proveedor.find(params[:id])           
     end
 
-    def create
-        @proveedor = Proveedor.new( proveedor_params)
-        if @proveedor.save 
-            redirect_to proveedor_path(@proveedor)
-        else
-            render :new
-        end
-    end
+    def create   
+        @proveedor = Proveedor.new(proveedor_params)   
+        if @proveedor.save   
+          flash[:notice] = 'Proveedor agregado!'   
+          redirect_to proveedor_path(@proveedor)   
+        else   
+          flash[:error] = 'No se pudo editar el proveedor!'   
+          render :new   
+        end   
+    end   
      
     private
 
@@ -47,9 +51,9 @@ class ProveedoresController < ApplicationController
         @proveedor = Proveedor.find(params[:id])
        
         if @proveedor.update(proveedor_params)
-          redirect_to @proveedor
+          redirect_to proveedor_path(@proveedore)
         else
-          render 'edit'
+          render 'edit', status: :unprocessable_entity
         end
     end
 
@@ -67,15 +71,15 @@ class ProveedoresController < ApplicationController
         )
     end
 
-    def destroy
-        @proveedor = Proveedor.find(params[:id])
-        if @proveedor.destroy
-            flash[:success] = 'proveedor was successfully deleted.'
-            redirect_to proveedor_url
-        else
-            flash[:error] = 'Something went wrong'
-            redirect_to proveedor_url
-        end
+    def destroy   
+        @proveedor = Proveedor.find(params[:id])   
+        if @proveedor.delete   
+          flash[:notice] = '¡Proveedor eliminado!'  
+          redirect_to proveedor_path(@proveedor)   
+        else   
+          flash[:error] = '¡Error al eliminar este Proveedor!'   
+          render :destroy   
+        end   
     end
 
 end

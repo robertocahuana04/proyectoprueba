@@ -1,4 +1,8 @@
 <h1>proveedor</h1>
+<%= link_to 'listado proveedor', proveedores_path %>
+<%= link_to 'Editar', edit_proveedor_path(@proveedor) %>
+<%= link_to 'atras', proveedores_path %>
+
 <table> 
     <tr>
     <td><%= @proveedor.codigo%></td>
@@ -11,4 +15,3 @@
     </tr>
 </table>    
     
-<%= link_to 'listado proveedor', proveedores_path %>
