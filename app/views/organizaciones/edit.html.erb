@@ -1,9 +1,25 @@
-<h2>listado</h2>
-<%= link_to 'Back', organizacione_path %>
-<table>
-    <tr>
-        <td><%= @organizacione.tipo_de_organizacion%></td>
-        <td><%= @organizacione.numero_de_empleado%></td>
-        <td><%= @organizacione.representantes%></td>
-    </tr> 
-</table>
+<p class="text-center , fs-1">editar organizaciones</p>
+
+<%= link_to 'Atras', organizaciones_path, class: 'btn btn-primary' %>
+
+<%= form_for :post do |f| %>
+    <p>
+      <%= f.label :tipo_de_organizacion %><br>
+      <%= f.text_field :tipo_de_organizacion %>
+    </p>
+
+    <p>
+      <%= f.label :numero_de_empleado %><br>
+      <%= f.text_area :numero_de_empleado %>
+    </p>
+
+    <p>
+      <%= f.label :representantes%><br>
+      <%= f.text_area :representantes%>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+  

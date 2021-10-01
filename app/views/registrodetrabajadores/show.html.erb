@@ -1,10 +1,23 @@
-<h1>show</h1>
-<%= link_to 'Back', registrodetrabajadores_path %>
-<table>
-    <tr>
-    <td><%= @registrodetrabajadore.nombre %></td>
-    <td><%= @registrodetrabajadore.edad %></td>
-    <td><%= @registrodetrabajadore.cargo %></td>
-    <td><%= @registrodetrabajadore.telefono %></td>
-    </tr>
-</table>   
+<p class="text-center , fs-1">trabajadores</p>
+
+<div class="container">
+<%= link_to 'Atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
+<%= link_to 'Editar', edit_registrodetrabajadore_path(@registrodetrabajadore), class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped">
+        <tr>
+            <th>nombre</th>
+            <th>edad</th>
+            <th>cargo</th>
+            <th>telefono</th>
+        </tr>
+        <tr>
+            <td><%= @registrodetrabajadore.nombre %></td>
+            <td><%= @registrodetrabajadore.edad %></td>
+            <td><%= @registrodetrabajadore.cargo %></td>
+            <td><%= @registrodetrabajadore.telefono %></td>
+        </tr>
+    </table>  
+</div> 

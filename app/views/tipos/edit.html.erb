@@ -1,9 +1,19 @@
-<h2>listado</h2>
-<%= link_to 'listado tipo', tipo_path %>
-<%= link_to 'Back', tipos_path %>
-<table>
-    <tr>
-        <td><%= @tipo.tipo%></td>
-        <td><%= @tipo.estado%></td>
-    </tr> 
-</table>
+<p class="text-center , fs-1">editar tipos</p>
+
+<%= link_to 'listado tipo', tipo_path, class: 'btn btn-primary' %>
+<%= link_to 'Back', tipos_path, class: 'btn btn-primary' %>
+
+<%= form_for :post do |f| %>
+    <p>
+      <%= f.label :tipo %><br>
+      <%= f.text_field :tipo %>
+    </p>
+
+    <p>
+      <%= f.label :estado %><br>
+      <%= f.text_area :estado %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

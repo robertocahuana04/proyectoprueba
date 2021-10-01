@@ -1,28 +1,34 @@
-<h1>Listing compra</h1>
-<%= link_to 'New compra', new_compra_path %>
-<table class = "table table-bordered table-striped">
-  <tr>
-    <th>codigo_producto</th>
-    <th>nombre_del_cliente</th>
-    <th>identificacion_del_cliente</th>
-    <th>fecha_de_compra</th>
-    <th>tipo_producto</th>
-    <th>forma_de_pago</th>
-    <th colspan="6"></th>
-  </tr>
- 
-  <% @compra.each do |compra| %>
+<p class="text-center , fs-1">Listing compras</p>
+
+<div class="container">
+<%= link_to 'New compras', new_compra_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <table class = "table table-bordered table-striped">
     <tr>
-      <td><%= compra.codigo_producto %></td>
-      <td><%= compra.nombre_del_cliente %></td>
-      <td><%= compra.identificacion_del_cliente %></td>
-      <td><%= compra.fecha_de_compra %></td>
-      <td><%= compra.tipo_producto %></td>
-      <td><%= compra.forma_de_pago %></td>
-      <td><%= link_to 'Show', compra_path(compra) %></td>
-      <td><%= link_to 'Editar', edit_compra_path(compra) %></td>
-      <td><%= link_to 'Destroy', compra_path(compra),
-      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <th>codigo_producto</th>
+      <th>nombre_del_cliente</th>
+      <th>identificacion_del_cliente</th>
+      <th>fecha_de_compra</th>
+      <th>tipo_producto</th>
+      <th>forma_de_pago</th>
+      <th colspan="6"></th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @compra.each do |compra| %>
+      <tr>
+        <td><%= compra.codigo_producto %></td>
+        <td><%= compra.nombre_del_cliente %></td>
+        <td><%= compra.identificacion_del_cliente %></td>
+        <td><%= compra.fecha_de_compra %></td>
+        <td><%= compra.tipo_producto %></td>
+        <td><%= compra.forma_de_pago %></td>
+        <td><%= link_to 'Show', compra_path(compra), class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Editar', edit_compra_path(@compra), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Destroy', compra_path(compra),
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger'  %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

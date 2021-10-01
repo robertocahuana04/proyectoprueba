@@ -1,13 +1,42 @@
 
-<%= link_to 'stoockdeproducto', stoockdeproducto_path %>
-<%= link_to 'Back', stoockdeproductos_path %>
-<table> 
-    <tr>
-        <td><%= @stoockdeproducto.codigo%></td>
-        <td><%= @stoockdeproducto.nombre%></td>
-        <td><%= @stoockdeproducto.cantidad_existente%></td>
-        <td><%= @stoockdeproducto.referencia%></td>
-        <td><%= @stoockdeproducto.tipo %></td>
-        <td><%= @stoockdeproducto.proveedor%></td>
-    </tr>
-</table> 
+<p class="text-center , fs-1">editar stoockdeproducto</p>
+
+<%= link_to 'stoockdeproducto', stoockdeproducto_path, class: 'btn btn-primary' %>
+<%= link_to 'Atras', stoockdeproductos_path, class: 'btn btn-primary' %>
+
+
+<%= form_for :post do |f| %>
+    <p>
+      <%= f.label :codigo %><br>
+      <%= f.text_field :codigo %>
+    </p>
+
+    <p>
+      <%= f.label :nombre %><br>
+      <%= f.text_area :nombre %>
+    </p>
+
+    <p>
+      <%= f.label :cantidad_existente %><br>
+      <%= f.text_area :cantidad_existente%>
+    </p>
+
+    <p>
+      <%= f.label :referencia %><br>
+      <%= f.text_area :referencia %>
+    </p>
+
+    <p>
+      <%= f.label :tipo%><br>
+      <%= f.text_area :tipo%>
+    </p>
+
+    <p>
+      <%= f.label :proveedor %><br>
+      <%= f.text_area :proveedor %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>

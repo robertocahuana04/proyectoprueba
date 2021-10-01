@@ -1,24 +1,30 @@
-<h1>Listing Registrodetrabajadores</h1>
-<%= link_to 'New trabajador', new_registrodetrabajadore_path %>
-<table>
-  <tr>
-    <th>nombre</th>
-    <th>edad</th>
-    <th>cargo</th>
-    <th>telefono</th>
-    <th colspan="4"></th>
-  </tr>
- 
-  <% @registrodetrabajadore.each do |registrodetrabajadore| %>
+<p class="text-center , fs-1">Listing Registrodetrabajadores</p>
+
+<div class="container">
+<%= link_to 'Crear trabajador', new_registrodetrabajadore_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <table class = "table table-bordered table-striped">
     <tr>
-      <td><%= registrodetrabajadore.nombre %></td>
-      <td><%= registrodetrabajadore.edad %></td>
-      <td><%= registrodetrabajadore.cargo %></td>
-      <td><%= registrodetrabajadore.telefono %></td>
-      <td><%= link_to 'Show', registrodetrabajadore_path(registrodetrabajadore) %></td>
-      <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore) %></td>
-      <td><%= link_to 'Destroy', registrodetrabajadore_path(registrodetrabajadore),
-      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <th>nombre</th>
+      <th>edad</th>
+      <th>cargo</th>
+      <th>telefono</th>
+      <th colspan="4">accion</th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @registrodetrabajadore.each do |registrodetrabajadore| %>
+      <tr>
+        <td><%= registrodetrabajadore.nombre %></td>
+        <td><%= registrodetrabajadore.edad %></td>
+        <td><%= registrodetrabajadore.cargo %></td>
+        <td><%= registrodetrabajadore.telefono %></td>
+        <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Destroy', registrodetrabajadore_path(registrodetrabajadore),
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

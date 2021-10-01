@@ -1,14 +1,19 @@
-<h1>hola2</h1>
-<table>
-    <tr>
-        <td><%= @reclamo.codigo%></td>
-        <td><%= @reclamo.identificacion_del_cliente%></td>
-        <td><%= @reclamo.nombre_del_cliente%></td>
-        <td><%= @reclamo.producto_adquirido%></td>
-        <td><%= @reclamo.fecha_de_compra%></td>
-        <td><%= @reclamo.estado_del_producto%></td>
-    </tr> 
-</table>
+<p class="text-center , fs-1">Reclamos</p>
 
-<%= link_to 'New reclamo', new_reclamo_path %>
-<%= link_to 'Back', reclamos_path %>
+<div class="container">
+<%= link_to 'Atras', reclamos_path, class: 'btn btn-primary' %>
+<%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped">
+        <tr>
+            <td><%= @reclamo.codigo%></td>
+            <td><%= @reclamo.identificacion_del_cliente%></td>
+            <td><%= @reclamo.nombre_del_cliente%></td>
+            <td><%= @reclamo.producto_adquirido%></td>
+            <td><%= @reclamo.fecha_de_compra%></td>
+            <td><%= @reclamo.estado_del_producto%></td>
+        </tr> 
+    </table>
+</div>

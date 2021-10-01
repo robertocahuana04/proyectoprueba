@@ -1,14 +1,47 @@
-<h1>editar proveedor</h1>
-<%= link_to 'listado proveedor', proveedores_path %>
-<%= link_to 'atras', proveedores_path %>
+<p class="text-center , fs-1">editar proveedor</p>
 
-<%= form_with model: @proveedor do |form| %>
-  <%= form.text_field :codigo, placeholder: "codigo" %>
-  <%= form.text_field :nombre, placeholder: "nombre" %>
-  <%= form.text_field :correoelectronico, placeholder: "correoelectronico" %>
-  <%= form.text_field :telefono, placeholder: "telefono" %>
-  <%= form.text_field :direccion, placeholder: "direccion" %>
-  <%= form.text_field :ciudad, placeholder: "ciudad" %>
-  <%= form.text_field :destinario, placeholder: "destinario" %>
-  <%= form.submit 'editar proveedores' %>
-<% end %>
+<%= link_to 'listado proveedor', proveedores_path, class: 'btn btn-primary' %>
+<%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
+
+
+
+  <%= form_for :post do |f| %>
+    <p>
+      <%= f.label :codigo %><br>
+      <%= f.text_field :codigo %>
+    </p>
+
+    <p>
+      <%= f.label :nombre %><br>
+      <%= f.text_area :nombre %>
+    </p>
+
+    <p>
+      <%= f.label :correoelectronico %><br>
+      <%= f.text_area :correoelectronico%>
+    </p>
+
+    <p>
+      <%= f.label :telefono %><br>
+      <%= f.text_area :telefono %>
+    </p>
+
+    <p>
+      <%= f.label :direccion %><br>
+      <%= f.text_area :direccion%>
+    </p>
+
+    <p>
+      <%= f.label :ciudad %><br>
+      <%= f.text_area :ciudad %>
+    </p>
+
+    <p>
+      <%= f.label :destinario%><br>
+      <%= f.text_area :destinario%>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>

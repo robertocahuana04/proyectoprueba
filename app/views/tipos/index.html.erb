@@ -1,20 +1,26 @@
-<h1>Listing tipo</h1>
-<%= link_to 'New tipo', new_tipo_path %>
-<table class = "table table-bordered table-striped">
-  <tr>
-    <th>tipo</th>
-    <th>estado</th>
-    <th colspan="6"></th>
-  </tr>
- 
-  <% @tipo.each do |tipo| %>
+<p class="text-center , fs-1">Listing tipo</p>
+
+<div class="container">
+<%= link_to 'Crear tipo', new_tipo_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <table class = "table table-bordered table-striped">
     <tr>
-      <td><%= tipo.tipo %></td>
-      <td><%= tipo.estado %></td>
-      <td><%= link_to 'Show', tipo_path(tipo) %></td>
-      <td><%= link_to 'Editar', edit_tipo_path(tipo) %></td>
-      <td><%= link_to 'Destroy', tipo_path(tipo),
-      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <th>tipo</th>
+      <th>estado</th>
+      <th colspan="3">Accion</th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @tipo.each do |tipo| %>
+      <tr>
+        <td><%= tipo.tipo %></td>
+        <td><%= tipo.estado %></td>
+        <td><%= link_to 'Show', tipo_path(tipo), class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Destroy', tipo_path(tipo),
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

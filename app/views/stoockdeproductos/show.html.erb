@@ -1,13 +1,28 @@
-<h1>listado de stoockdeproducto</h1>
-<%= link_to 'stoockdeproducto', new_stoockdeproducto_path %>
-<%= link_to 'Back', stoockdeproductos_path %>
-<table> 
-    <tr>
-        <td><%= @stoockdeproducto.codigo%></td>
-        <td><%= @stoockdeproducto.nombre%></td>
-        <td><%= @stoockdeproducto.cantidad_existente%></td>
-        <td><%= @stoockdeproducto.referencia%></td>
-        <td><%= @stoockdeproducto.tipo %></td>
-        <td><%= @stoockdeproducto.proveedor%></td>
-    </tr>
-</table> 
+<p id="notice"> <%= notice%> </p>
+<p class="text-center , fs-1">listado de stoockdeproducto</p>
+
+<div class="container">
+<%= link_to 'Editar', edit_stoockdeproducto_path(@stoockdeproducto), class: 'btn btn-primary' %>
+<%= link_to 'Atras', stoockdeproductos_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped"> 
+        <tr>
+            <th>codigo</th>
+            <th>nombre</th>
+            <th>cantidad_existente</th>
+            <th>referencia</th>
+            <th>tipo</th>
+            <th>proveedor</th>
+        </tr>
+        <tr>
+            <td><%= @stoockdeproducto.codigo%></td>
+            <td><%= @stoockdeproducto.nombre%></td>
+            <td><%= @stoockdeproducto.cantidad_existente%></td>
+            <td><%= @stoockdeproducto.referencia%></td>
+            <td><%= @stoockdeproducto.tipo %></td>
+            <td><%= @stoockdeproducto.proveedor%></td>
+        </tr>
+    </table> 
+</div>

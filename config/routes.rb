@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   resources :tipos
   resources :organizaciones
   resources :stoockdeproductos 
-  resources :proveedores 
-  
-  
+  resources :proveedores
+  get "proveedores" => "proveedores#index"
+  delete "proveedores/:id" => "proveedores#destroy"
+  post 'proveedores/:id/edit' => 'proveedores#edit'
+  put "proveedores/:id" => "proveedores#update"
   
   resources :productos
   # devise_scope :user do

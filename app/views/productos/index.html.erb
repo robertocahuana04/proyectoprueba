@@ -1,32 +1,38 @@
-<h1>Listing producto</h1>
-<%= link_to 'New producto', new_producto_path %>
-<%= link_to "dasboard", root_path %>
-<table class = "table table-bordered table-striped">
-  <tr>
-    <th>codigo</th>
-    <th>nombre</th>
-    <th>referencia</th>
-    <th>stock</th>
-    <th>remitente</th>
-    <th>tipo</th>
-    <th colspan="6"></th>
-  </tr>
- 
-  <% @producto.each do |producto| %>
+<p class="text-center , fs-1">Listing productos</p>
+
+<div class="container">
+<%= link_to 'New producto', new_producto_path, class: 'btn btn-primary' %>
+<%= link_to "dasboard", root_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <table class = "table table-bordered table-striped">
     <tr>
-      <td><%= producto.codigo %></td>
-      <td><%= producto.nombre %></td>
-      <td><%= producto.referencia%></td>
-      <td><%= producto.stock%></td>
-      <td><%= producto.remitente %></td>
-      <td><%= producto.tipo %></td>
-      <td><%= link_to 'Show', producto_path(producto) %></td>
-      <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
-      <td><%= link_to 'Destroy', producto_path(producto),
-      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <th>codigo</th>
+      <th>nombre</th>
+      <th>referencia</th>
+      <th>stock</th>
+      <th>remitente</th>
+      <th>tipo</th>
+      <th colspan="6"></th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @producto.each do |producto| %>
+      <tr>
+        <td><%= producto.codigo %></td>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.referencia%></td>
+        <td><%= producto.stock%></td>
+        <td><%= producto.remitente %></td>
+        <td><%= producto.tipo %></td>
+        <td><%= link_to 'Show', producto_path(producto) %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Destroy', producto_path(producto),
+        method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
 
 

@@ -1,4 +1,6 @@
 class PersonasController < ApplicationController
+
+    
     
     def new
         @persona = Persona.new   
@@ -19,7 +21,7 @@ class PersonasController < ApplicationController
     def create
         @persona = Persona.new( persona_params)
         if @persona.save 
-            redirect_to persona_path(@persona)
+        redirect_to personas_path
         else
             render :new
         end
@@ -35,5 +37,24 @@ class PersonasController < ApplicationController
           :telefono,
         )
     end
+
+
+    def destroy
+        @persona = Persona.find(params[:id])
+        @persona.destroy
+        redirect_to action: :index
+    end
+    
+    private
+
+    def persona_params
+        params.require(:persona).permit(
+          :cedula,
+          :genero,
+          :fecha_nacimiento,
+          :telefono,
+        )
+    end
+
 
 end

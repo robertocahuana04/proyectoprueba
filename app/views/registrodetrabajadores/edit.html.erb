@@ -1,9 +1,31 @@
 <h1>editar registrodetrabajadore</h1>
-<table>
-    <tr>
-        <td><%= @registrodetrabajadore.nombre %></td>
-        <td><%= @registrodetrabajadore.edad %></td>
-        <td><%= @registrodetrabajadore.cargo %></td>
-        <td><%= @registrodetrabajadore.telefono %></td>
-    </tr>
-</table>
+
+<%= link_to 'listado registrodetrabajadores', registrodetrabajadores_path, class: 'btn btn-primary' %>
+<%= link_to 'atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
+
+
+  <%= form_for :post do |f| %>
+    <p>
+      <%= f.label :nombre  %><br>
+      <%= f.text_field :nombre  %>
+    </p>
+
+    <p>
+      <%= f.label :edad %><br>
+      <%= f.text_area :edad %>
+    </p>
+
+    <p>
+      <%= f.label :cargo %><br>
+      <%= f.text_area :cargo %>
+    </p>
+
+    <p>
+      <%= f.label :telefono %><br>
+      <%= f.text_area :telefono %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>

@@ -1,10 +1,20 @@
-<h2>hola</h2>
-<table>
-    <tr>
-        <td><%= @tipo.tipo%></td>
-        <td><%= @tipo.estado%></td>
-    </tr> 
-</table>
+<p id="notice"> <%= notice%> </p>
+<p class="text-center , fs-1">tipos</p>
 
-<%= link_to 'New tipo', new_tipo_path %>
-<%= link_to 'Back', tipos_path %>
+<div class="container">
+    <%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-primary' %>
+<%= link_to 'Atras', tipos_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped">
+        <tr>
+            <th>tipo</th>
+            <th>estado</th>
+        </tr> 
+        <tr>
+            <td><%= @tipo.tipo%></td>
+            <td><%= @tipo.estado%></td>
+            </tr>
+    </table>
+</div>

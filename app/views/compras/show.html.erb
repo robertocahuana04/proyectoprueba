@@ -1,11 +1,29 @@
-<h1>listado de compras</h1>
-<table> 
-    <tr>
-    <td><%= @compra.codigo_producto%></td>
-    <td><%= @compra.nombre_del_cliente%></td>
-    <td><%= @compra.identificacion_del_cliente%></td>
-    <td><%= @compra.fecha_de_compra%></td>
-    <td><%= @compra.tipo_producto%></td>
-    <td><%= @compra.forma_de_pago%></td>
-    </tr>
-</table>    
+<p id="notice"> <%= notice%> </p>
+
+<p class="text-center , fs-1">listado de compras</p>
+
+<div class="container">
+    <%= link_to 'Editar', edit_compra_path(@compra), class: 'btn btn-primary' %>
+<%= link_to 'atras', compras_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped"> 
+        <tr>
+            <th>codigo_producto</th>
+            <th>nombre_del_cliente</th>
+            <th>identificacion_del_cliente</th>
+            <th>fecha_de_compra</th>
+            <th>tipo_producto</th>
+            <th>forma_de_pago</th>
+        </tr>
+        <tr>
+            <td><%= @compra.codigo_producto%></td>
+            <td><%= @compra.nombre_del_cliente%></td>
+            <td><%= @compra.identificacion_del_cliente%></td>
+            <td><%= @compra.fecha_de_compra%></td>
+            <td><%= @compra.tipo_producto%></td>
+            <td><%= @compra.forma_de_pago%></td>
+        </tr>
+    </table>
+</div>

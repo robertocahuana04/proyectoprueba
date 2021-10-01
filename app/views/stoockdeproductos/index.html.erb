@@ -1,28 +1,34 @@
-<h1>Listing stoockdeproducto</h1>
-<%= link_to 'New stoockdeproducto', new_stoockdeproducto_path %>
-<table class = "table table-bordered table-striped">
-  <tr>
-    <th>codigo</th>
-    <th>nombre</th>
-    <th>cantidad_existente</th>
-    <th>referencia</th>
-    <th>tipo</th>
-    <th>proveedor</th>
-    <th colspan="6"></th>
-  </tr>
- 
-  <% @stoockdeproducto.each do |stoockdeproducto| %>
+<p class="text-center , fs-1">Listing stoockdeproducto</p>
+
+<div class="container">
+<%= link_to 'New stoockdeproducto', new_stoockdeproducto_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <table class = "table table-bordered table-striped">
     <tr>
-      <td><%= stoockdeproducto.codigo %></td>
-      <td><%= stoockdeproducto.nombre %></td>
-      <td><%= stoockdeproducto.cantidad_existente %></td>
-      <td><%= stoockdeproducto.referencia%></td>
-      <td><%= stoockdeproducto.tipo %></td>
-      <td><%= stoockdeproducto.proveedor %></td>
-      <td><%= link_to 'Show', stoockdeproducto_path(stoockdeproducto) %></td>
-      <td><%= link_to 'Editar', edit_stoockdeproducto_path(stoockdeproducto) %></td>
-      <td><%= link_to 'Destroy', stoockdeproducto_path(stoockdeproducto),
-      method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      <th>codigo</th>
+      <th>nombre</th>
+      <th>cantidad_existente</th>
+      <th>referencia</th>
+      <th>tipo</th>
+      <th>proveedor</th>
+      <th colspan="6">Accion</th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @stoockdeproducto.each do |stoockdeproducto| %>
+      <tr>
+        <td><%= stoockdeproducto.codigo %></td>
+        <td><%= stoockdeproducto.nombre %></td>
+        <td><%= stoockdeproducto.cantidad_existente %></td>
+        <td><%= stoockdeproducto.referencia%></td>
+        <td><%= stoockdeproducto.tipo %></td>
+        <td><%= stoockdeproducto.proveedor %></td>
+        <td><%= link_to 'Ver', stoockdeproducto_path(stoockdeproducto), class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Editar', edit_stoockdeproducto_path(stoockdeproducto), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Destroy', stoockdeproducto_path(stoockdeproducto),
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
