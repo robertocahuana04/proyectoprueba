@@ -1,10 +1,30 @@
-<h1>Productos#show</h1>
+<p id="notice"><%= notice %></p>
 
-<%= @Productos.codigo%>
-<%= @Productos.nombre%>
-<%= @Productos.referencia%>
-<%= @Productos.stock%>
-<%= @Productos.remitente%>
-<%= @Productos.tipo_id%>
+<p class="text-center , fs-1">Productos</p>
 
-<%= link_to 'New producto', new_producto_path %>
+<div class="container">
+    <%= link_to 'Editar', edit_Producto_path(@Producto), class: 'btn btn-primary' %>
+    <%= link_to 'atras', Productos_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="container">
+    <table class = "table table-bordered table-striped"> 
+        <tr>
+            <th>codigo</th>
+            <th>nombre</th>
+            <th>referencia</th>
+            <th>stock</th>
+            <th>remitente</th>
+            <th>tipo_id</th>
+        </tr>
+        
+        <tr>
+        <td><%= @Producto.codigo%></td>
+        <td><%= @Producto.nombre%></td>
+        <td><%= @Producto.referencia%></td>
+        <td><%= @Producto.stock%></td>
+        <td><%= @Producto.remitente%></td>
+        <td><%= @Producto.tipo_id%></td>
+        </tr>
+    </table> 
+</div>    
