@@ -10,6 +10,7 @@ class CreateProveedores < ActiveRecord::Migration[6.1]
       t.text :destinario
       t.integer :organizacione_id
       t.integer :persona_id
+      t.integer :compra_id
 
       t.timestamps
     end

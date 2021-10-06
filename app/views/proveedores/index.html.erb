@@ -1,8 +1,10 @@
-<p class="text-center , fs-1">Listing proveedor</p>
+<p id="notice"><%= flash[:notice] %></p>
+<h1 class="text-center , fs-1">Listing proveedor</h1>
 
 <div class="container">
 <%= link_to 'Crear proveedor', new_proveedor_path, class: 'btn btn-primary' %>
 </div>
+
 
 <div class="container">
   <table class = "table table-bordered table-striped" >
@@ -26,10 +28,10 @@
         <td><%= proveedor.direccion %></td>
         <td><%= proveedor.ciudad %></td>
         <td><%= proveedor.destinario %></td>
-        <td><%= link_to 'Ver', proveedor_path(proveedor), class: 'btn btn-outline-success' %></td>
-        <td><%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Ver', proveedor , class: 'btn btn-success' %></td>
+        <td><%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Eliminar', proveedor_path(proveedor), :method => :destroy,
-        :confirm => 'Are you sure?', :class => 'btn btn-outline-danger' %></td>
+        :confirm => 'Are you sure?', :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </table>

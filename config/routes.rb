@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "home#dasboard"
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   
-  
+  resources :usuarios
   resources :registrodetrabajadores
   resources :reclamos
   resources :personas
@@ -15,10 +15,13 @@ Rails.application.routes.draw do
   resources :organizaciones
   resources :stoockdeproductos 
   resources :proveedores
-  get "proveedores" => "proveedores#index"
-  delete "proveedores/:id" => "proveedores#destroy"
-  post 'proveedores/:id/edit' => 'proveedores#edit'
-  put "proveedores/:id" => "proveedores#update"
+  get "/proveedores" => "proveedores#index" 
+  post "/proveedores" => "proveedores#create"
+  delete "/proveedores" => "proveedores#delete" 
+  get "/proveedores/:id/edit" =>"proveedores#edit"
+  post "/proveedores/:id/edit" =>"proveedores#edit" 
+  patch "/proveedores/:id" => "proveedores#update" 
+  put "/proveedores/:id" => "proveedores#update"
   
   resources :productos
   # devise_scope :user do

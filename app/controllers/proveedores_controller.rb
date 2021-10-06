@@ -1,15 +1,16 @@
 class ProveedoresController < ApplicationController
-    
 
     def new
         @proveedor = Proveedor.new   
     end
 
     def index
+      #todo los registro SELET FRON proveedor
       @proveedor = Proveedor.all
     end
 
     def show
+      #encontrar un registro por id
         @proveedor = Proveedor.find(params[:id])           
     end
 
@@ -42,11 +43,11 @@ class ProveedoresController < ApplicationController
       @proveedor = Proveedor.find(params[:id])
     end
 
-
+    #
     def update
-        @proveedor = Proveedor.find(params)
+        @proveedor = Proveedor.find(params[:id])
         if @proveedor.update(proveedor_params)
-          redirect_to :action => 'show', :id => @proveedor
+          redirect_to @proveedor
         else
           @proveedor = Proveedor.all
           render 'edit', status: :unprocessable_entity
@@ -66,12 +67,13 @@ class ProveedoresController < ApplicationController
           :destinario,
         )
     end
-
+     
+    #DELETE /proveedor/id
     def destroy   
-        @proveedor = Proveedor.find(params)   
-        if @proveedor.destroy   
+        @proveedor = Proveedor.find(params[:id])   
+        if @proveedor.destroy   #Destroy eliminar el objeto de la BD
           flash[:notice] = '¡Proveedor eliminado!'  
-          redirect_to proveedor_path(@proveedores)  
+          redirect_to proveedores_path 
         else   
           flash[:error] = '¡Error al eliminar este Proveedor!'   
           render :destroy   

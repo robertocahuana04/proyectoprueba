@@ -9,6 +9,7 @@ class CreateCompras < ActiveRecord::Migration[6.1]
       t.string :forma_de_pago
       t.integer :stoockdeproducto_id
       t.integer :producto_id
+      t.integer :usuario_id
 
       t.timestamps
     end

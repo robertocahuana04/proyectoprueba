@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.string "forma_de_pago"
     t.integer "stoockdeproducto_id"
     t.integer "producto_id"
+    t.integer "usuario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
   create_table "personas", force: :cascade do |t|
     t.integer "cedula"
     t.string "genero"
-    t.text "fecha_nacimiento"
+    t.date "fecha_nacimiento"
     t.integer "telefono"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.text "destinario"
     t.integer "organizacione_id"
     t.integer "persona_id"
+    t.integer "compra_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -73,7 +75,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.string "nombre_del_cliente"
     t.string "producto_adquirido"
     t.date "fecha_de_compra"
-    t.boolean "estado_del_producto"
+    t.string "estado_del_producto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -91,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.integer "identificacion"
     t.string "nombre"
     t.string "correo_electronico"
-    t.string "fecha_de_nacimiento"
+    t.date "fecha_de_nacimiento"
     t.string "direccion"
     t.string "cargo"
     t.string "ciudad"
@@ -112,7 +114,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
 
   create_table "tipos", force: :cascade do |t|
     t.string "tipo"
-    t.boolean "estado"
+    t.string "estado"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -136,6 +138,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_221353) do
     t.string "direccion"
     t.integer "reclamo_id"
     t.integer "registrodetrabajadore_id"
+    t.integer "registro_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

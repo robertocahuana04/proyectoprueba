@@ -1,32 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p class="text-center , fs-1">proveedor</p>
+<h1 class="text-center , fs-1">proveedor</h1>
 
-<div class="container">
-<%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %>
-<%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
-</div>
-
-<div class="container">
-    <table class = "table table-bordered table-striped"> 
-        <tr>
-            <th>codigo</th>
-            <th>nombre</th>
-            <th>correoelectronico</th>
-            <th>telefono</th>
-            <th>direccion</th>
-            <th>ciudad</th>
-            <th>destinario</th>
-        </tr>
-        
-        <tr>
-        <td><%= @proveedor.codigo%></td>
-        <td><%= @proveedor.nombre%></td>
-        <td><%= @proveedor.correoelectronico%></td>
-        <td><%= @proveedor.telefono%></td>
-        <td><%= @proveedor.direccion%></td>
-        <td><%= @proveedor.ciudad%></td>
-        <td><%= @proveedor.destinario%></td>
-        </tr>
-    </table> 
-</div>
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %>
+    <%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>codigo:</dt>
+        <dd><%= @proveedor.codigo%></dd>
+        <dt>nombre:</dt>
+        <dd><%= @proveedor.nombre%></dd>
+        <dt>correoelectronico:</dt>
+        <dd><%= @proveedor.correoelectronico%></dd>
+        <dt>telefono:</dt>
+        <dd><%= @proveedor.telefono%></dd>
+        <dt>direccion:</dt>
+        <dd><%= @proveedor.direccion%></dd>
+        <dt>ciudad:</dt>
+        <dd><%= @proveedor.ciudad%></dd>
+        <dt>destinario:</dt>
+        <dd><%= @proveedor.destinario%></dd>
+    </dl>
+  </aside>
+  <article class="col=md-4">
+    <section class="well">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod facilis inventore sapiente 
+        debitis voluptate magni nam eveniet laboriosam quidem in dolore quia dolorem, ratione nesciunt
+        nulla reprehenderit esse quo. Exercitationem?</p>
+    </section>
+</article> 
+</section>

@@ -4,7 +4,7 @@ class CreateRegistros < ActiveRecord::Migration[6.1]
       t.integer :identificacion
       t.string :nombre
       t.string :correo_electronico
-      t.string :fecha_de_nacimiento
+      t.date :fecha_de_nacimiento
       t.string :direccion
       t.string :cargo
       t.string :ciudad
