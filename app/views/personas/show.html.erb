@@ -2,25 +2,21 @@
 
 <p class="text-center , fs-1">personas</p>
 
-<div class="container">
-    <%= link_to 'Atras', personas_path, class: 'btn btn-primary' %>
+<section class="row">
+  <div class="container">
     <%= link_to 'Editar', edit_persona_path(@persona), class: 'btn btn-primary' %>
-</div>
-
-<div class="container">
-    <table class = "table table-bordered table-striped">
-
-        <tr>
-            <th>cedula</th>
-            <th>genero</th>
-            <th>fecha_nacimiento</th>
-            <th>telefono</th>
-        </tr>
-        <tr>
-            <td><%= @persona.cedula%></td>
-            <td><%= @persona.genero%></td>
-            <td><%= @persona.fecha_nacimiento%></td>
-            <td><%= @persona.telefono%></td>
-        </tr> 
-    </table>
-</div>
+    <%= link_to 'Atras', personas_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>cedula:</dt>
+        <dd><%= @persona.cedula%></dd>
+        <dt>genero:</dt>
+        <dd><%= @persona.genero%></dd>
+        <dt>fecha_nacimiento:</dt>
+        <dd><%= @persona.fecha_nacimiento%></dd>
+        <dt>telefono:</dt>
+        <dd><%= @persona.telefono%></dd>
+    </dl>
+  </aside>
+</section>

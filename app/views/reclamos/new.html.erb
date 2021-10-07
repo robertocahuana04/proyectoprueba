@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6">
         <%= simple_form_for @reclamo do |f| %>
             <%= f.input :codigo %>
             <%= f.input :identificacion_del_cliente %>
@@ -11,47 +11,3 @@
         <% end %>
     </div>
 </div>
-
-
-
-<div class="register-form mt-3 mb-3">
-    <div class="container">
-          <div class="row">
-            
-            <div class="col-md-6 bg-dark">
-                <form action="#" class="p-4 text-white">
-                  <div class="form-group">
-                      <label for="Codigo"><i class="fa fa-check-square-o"></i> Codigo</label>
-                      <input type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for="identificacion_del_cliente"><i class="fa fa-code"></i> identificacion_del_cliente</label>
-                      <input type="identificacion_del_cliente" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for="nombre_del_cliente"><i class="fa fa-user"></i> nombre_del_cliente</label>
-                      <input type="nombre_del_cliente" class="form-control" id="nombre_del_cliente">
-                  </div>
-                  <div class="form-group">
-                      <label for="producto_adquirido"><i class="fa fa-check-square-o"></i> producto_adquirido</label>
-                      <input type="producto_adquirido" class="form-control" id="producto_adquirido">
-                  </div>
-                  <div class="form-group">
-                    <label for="fecha_de_compra "><i class="fa fa-calendar"></i> fecha_de_compra </label>
-                    <input type="fecha_de_compra " class="form-control" id="fecha_de_compra ">
-                  </div>
-                  <div class="form-group">
-                    <label for="estado_del_producto"><i class="fa fa-pie-chart"></i> estado_del_producto</label>
-                    <input type="estado_del_producto" class="form-control" id="estado_del_producto">
-                  </div>
-                  <div class="form-group form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox"> Remember me
-                      </label>
-                  </div>
-                  <button type="submit" class="btn btn-warning mb-3 mt-3 float-right">crear proveedor</button>
-                </form>
-            </div>
-          </div>
-      </div>
-  </div>

@@ -1,12 +1,12 @@
 <p id="notice"><%= flash[:notice] %></p>
 <h1 class="text-center , fs-1">Listing Usuarios</h1>
 
-<div class="container">
+<div>
 <%= link_to 'Crear usuarios', new_usuario_path, class: 'btn btn-primary' %>
 </div>
 
 
-<div class="container">
+<div>
   <table class = "table table-bordered table-striped" >
     <tr>
       <th>identificacion</th>
@@ -22,7 +22,7 @@
         <td><%= usuario.nombre %></td>
         <td><%= usuario.telefono %></td>
         <td><%= usuario.direccion %></td>
-        <td><%= link_to 'Ver', usuario , class: 'btn btn-success' %></td>
+        <td><%= link_to 'Ver', usuario_path(usuario), class: 'btn btn-success' %></td>
         <td><%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Eliminar', usuario_path(usuario), :method => :destroy,
         :confirm => 'Are you sure?', :class => 'btn btn-danger' %></td>

@@ -1,13 +1,4 @@
-<h2>listado</h2>
-<%= link_to 'listado reclamos', reclamo_path %>
-<%= link_to 'Back', reclamos_path %>
-<table>
-    <tr>
-        <td><%= @reclamo.codigo%></td>
-        <td><%= @reclamo.identificacion_del_cliente%></td>
-        <td><%= @reclamo.nombre_del_cliente%></td>
-        <td><%= @reclamo.producto_adquirido%></td>
-        <td><%= @reclamo.fecha_de_compra%></td>
-        <td><%= @reclamo.estado_del_producto%></td>
-    </tr> 
-</table>
+<h1 class="text-center , fs-1">Editar Reclamos</h1>
+<%= link_to 'listado reclamos', reclamo_path, class: 'btn btn-primary' %>
+<%= link_to 'Atras', reclamos_path, class: 'btn btn-primary' %>
+

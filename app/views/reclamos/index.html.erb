@@ -1,7 +1,7 @@
-<p class="text-center , fs-1">Listing reclamos</p>
+<h1 class="text-center , fs-1">Listing reclamos</h1>
 
 <div class="container">
-<%= link_to 'New Reclamos', new_reclamo_path, class: 'btn btn-primary' %>
+<%= link_to 'Crear Reclamos', new_reclamo_path, class: 'btn btn-primary' %>
 </div>
 
 <div class="container">
@@ -24,10 +24,10 @@
         <td><%= reclamo.producto_adquirido%></td>
         <td><%= reclamo.fecha_de_compra %></td>
         <td><%= reclamo.estado_del_producto %></td>
-        <td><%= link_to 'Ver', reclamo_path(reclamo), class: 'btn btn-outline-success' %></td>
-        <td><%= link_to 'Editar', edit_reclamo_path(reclamo), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Ver', reclamo_path(reclamo), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Eliminar', reclamo_path(reclamo),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </table>

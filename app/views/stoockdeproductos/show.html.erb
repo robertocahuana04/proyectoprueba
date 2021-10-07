@@ -1,29 +1,27 @@
 <p id="notice"> <%= notice%></p>
 
-<p class="text-center , fs-1">listado de stoockdeproducto</p>
+<h1 class="text-center , fs-1">listado de stoockdeproducto</h1>
 
-<div class="container">
-<%= link_to 'Editar', edit_stoockdeproducto_path(@stoockdeproducto), class: 'btn btn-primary' %>
-<%= link_to 'Atras', stoockdeproductos_path, class: 'btn btn-primary' %>
-</div>
 
-<div class="container">
-    <table class = "table table-bordered table-striped"> 
-        <tr>
-            <th>codigo</th>
-            <th>nombre</th>
-            <th>cantidad_existente</th>
-            <th>referencia</th>
-            <th>tipo</th>
-            <th>proveedor</th>
-        </tr>
-        <tr>
-            <td><%= @stoockdeproducto.codigo%></td>
-            <td><%= @stoockdeproducto.nombre%></td>
-            <td><%= @stoockdeproducto.cantidad_existente%></td>
-            <td><%= @stoockdeproducto.referencia%></td>
-            <td><%= @stoockdeproducto.tipo %></td>
-            <td><%= @stoockdeproducto.proveedor%></td>
-        </tr>
-    </table> 
-</div>
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_stoockdeproducto_path(@stoockdeproducto), class: 'btn btn-primary' %>
+    <%= link_to 'Atras', stoockdeproductos_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>codigo:</dt>
+        <dd><%= @stoockdeproducto.codigo%></dd>
+        <dt>nombre:</dt>
+        <dd><%= @stoockdeproducto.nombre%></dd>
+        <dt>cantidad_existente:</dt>
+        <dd><%= @stoockdeproducto.cantidad_existente%></dd>
+        <dt>referencia:</dt>
+        <dd><%= @stoockdeproducto.referencia%></dd>
+        <dt>tipo:</dt>
+        <dd><%= @stoockdeproducto.tipo %></dd>
+        <dt>proveedor:</dt>
+        <dd><%= @stoockdeproducto.proveedor%></dd>
+    </dl>
+  </aside>
+</section>

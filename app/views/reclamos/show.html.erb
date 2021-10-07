@@ -1,21 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p class="text-center , fs-1">Reclamos</p>
+<h1 class="text-center , fs-1">Reclamo</h1>
 
-<div class="container">
-<%= link_to 'Atras', reclamos_path, class: 'btn btn-primary' %>
-<%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %>
-</div>
-
-<div class="container">
-    <table class = "table table-bordered table-striped">
-        <tr>
-            <td><%= @reclamo.codigo%></td>
-            <td><%= @reclamo.identificacion_del_cliente%></td>
-            <td><%= @reclamo.nombre_del_cliente%></td>
-            <td><%= @reclamo.producto_adquirido%></td>
-            <td><%= @reclamo.fecha_de_compra%></td>
-            <td><%= @reclamo.estado_del_producto%></td>
-        </tr> 
-    </table>
-</div>
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %>
+    <%= link_to 'Atras', reclamos_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>codigo:</dt>
+        <dd><%= @reclamo.codigo%></dd>
+        <dt>identificacion_del_cliente:</dt>
+        <dd><%= @reclamo.identificacion_del_cliente%></dd>
+        <dt>nombre_del_cliente:</dt>
+        <dd><%= @reclamo.nombre_del_cliente%></dd>
+        <dt>producto_adquirido:</dt>
+        <dd><%= @reclamo.producto_adquirido%></dd>
+        <dt>fecha_de_compra:</dt>
+        <dd><%= @reclamo.fecha_de_compra%></dd>
+        <dt>estado_del_producto:</dt>
+        <dd><%= @reclamo.estado_del_producto%></dd>
+    </dl>
+  </aside>
+</section>

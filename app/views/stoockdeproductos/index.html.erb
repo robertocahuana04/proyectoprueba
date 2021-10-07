@@ -1,10 +1,10 @@
-<p class="text-center , fs-1">Listing stoockdeproducto</p>
+<h1 class="text-center , fs-1">Listing stoockdeproducto</h1>
 
-<div class="container">
+<div>
 <%= link_to 'New stoockdeproducto', new_stoockdeproducto_path, class: 'btn btn-primary' %>
 </div>
 
-<div class="container">
+<div>
   <table class = "table table-bordered table-striped">
     <tr>
       <th>codigo</th>
@@ -24,10 +24,10 @@
         <td><%= stoockdeproducto.referencia%></td>
         <td><%= stoockdeproducto.tipo %></td>
         <td><%= stoockdeproducto.proveedor %></td>
-        <td><%= link_to 'Ver', stoockdeproducto_path(stoockdeproducto), class: 'btn btn-outline-success' %></td>
-        <td><%= link_to 'Editar', edit_stoockdeproducto_path(stoockdeproducto), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Ver', stoockdeproducto_path(stoockdeproducto), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Editar', edit_stoockdeproducto_path(@stoockdeproducto), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Destroy', stoockdeproducto_path(stoockdeproducto),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </table>

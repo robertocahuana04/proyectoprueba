@@ -1,6 +1,8 @@
 class ProveedoresController < ApplicationController
-
+    
+      
     def new
+      #get /proveedores/new
         @proveedor = Proveedor.new   
     end
 
@@ -21,7 +23,7 @@ class ProveedoresController < ApplicationController
           redirect_to (@proveedor)   
         else   
           flash[:error] = 'No se pudo editar el proveedor!'   
-          render :new   
+          render "new"   
         end   
     end   
      
@@ -50,7 +52,7 @@ class ProveedoresController < ApplicationController
           redirect_to @proveedor
         else
           @proveedor = Proveedor.all
-          render 'edit', status: :unprocessable_entity
+          render "edit", status: :unprocessable_entity
         end
     end
 
@@ -68,15 +70,15 @@ class ProveedoresController < ApplicationController
         )
     end
      
-    #DELETE /proveedor/id
-    def destroy   
+    def destroy 
+        #DELETE /proveedor/id  
         @proveedor = Proveedor.find(params[:id])   
         if @proveedor.destroy   #Destroy eliminar el objeto de la BD
           flash[:notice] = '¡Proveedor eliminado!'  
           redirect_to proveedores_path 
         else   
           flash[:error] = '¡Error al eliminar este Proveedor!'   
-          render :destroy   
+          render "destroy"   
         end   
     end
 

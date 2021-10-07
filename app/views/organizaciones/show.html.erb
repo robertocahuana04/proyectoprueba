@@ -1,23 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p class="text-center , fs-1">organizaciones</p>
+<h1 class="text-center , fs-1">organizaciones</h1>
 
-<div class="container">
-    <%= link_to 'Editar', edit_organizacione_path(@organizacione), class: 'btn btn-primary' %>    
+ <section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_organizacione_path(@organizacione), class: 'btn btn-primary' %>
     <%= link_to 'Atras', organizaciones_path, class: 'btn btn-primary' %>
-</div>
-<div class="container">
-    <table class = "table table-bordered table-striped">
-        <tr>
-            <th>tipo_de_organizacion</th>
-            <th>numero_de_empleado</th>
-            <th>representantes</th>
-        </tr>
-        <tr>
-            <td><%= @organizacione.tipo_de_organizacion%></td>
-            <td><%= @organizacione.numero_de_empleado%></td>
-            <td><%= @organizacione.representantes%></td>
-        </tr> 
-    </table>
-</div>
-
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>tipo_de_organizacion:</dt>
+        <dd><%= @organizacione.tipo_de_organizacion%></dd>
+        <dt>numero_de_empleado:</dt>
+        <dd><%= @organizacione.numero_de_empleado%></dd>
+        <dt>representantes:</dt>
+        <dd><%= @organizacione.representantes%></dd>
+    </dl>
+  </aside>
+</section>          

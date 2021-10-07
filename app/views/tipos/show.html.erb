@@ -1,20 +1,18 @@
 <p id="notice"> <%= notice%> </p>
-<p class="text-center , fs-1">tipos</p>
 
-<div class="container">
-    <%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-primary' %>
-<%= link_to 'Atras', tipos_path, class: 'btn btn-primary' %>
-</div>
+<h1 class="text-center , fs-1">tipos</h1>
 
-<div class="container">
-    <table class = "table table-bordered table-striped">
-        <tr>
-            <th>tipo</th>
-            <th>estado</th>
-        </tr> 
-        <tr>
-            <td><%= @tipo.tipo%></td>
-            <td><%= @tipo.estado%></td>
-            </tr>
-    </table>
-</div>
+<section class="row">
+    <div class="container">
+      <%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-primary' %>
+      <%= link_to 'Atras', tipos_path, class: 'btn btn-primary' %>
+    </div>
+    <aside class="col-xs-6">
+      <dl class="well well-sm , tab-content">
+          <dt>tipo:</dt>
+          <dd><%= @tipo.tipo%></dd>
+          <dt>estado:</dt>
+          <dd><%= @tipo.estado%></dd>
+      </dl>
+    </aside>
+  </section>

@@ -1,4 +1,4 @@
-<p class="text-center , fs-1">Listing Registrodetrabajadores</p>
+<h1 class="text-center , fs-1">Listing Registrodetrabajadores</h1>
 
 <div class="container">
 <%= link_to 'Crear trabajador', new_registrodetrabajadore_path, class: 'btn btn-primary' %>
@@ -20,10 +20,10 @@
         <td><%= registrodetrabajadore.edad %></td>
         <td><%= registrodetrabajadore.cargo %></td>
         <td><%= registrodetrabajadore.telefono %></td>
-        <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-outline-success' %></td>
-        <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-primary' %></td>
         <td><%= link_to 'Destroy', registrodetrabajadore_path(registrodetrabajadore),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-outline-danger' %></td>
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </table>

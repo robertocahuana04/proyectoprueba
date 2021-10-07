@@ -1,25 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p class="text-center , fs-1">trabajadores</p>
+<h1 class="text-center , fs-1">trabajadores</h1>
 
 <div class="container">
 <%= link_to 'Atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
 <%= link_to 'Editar', edit_registrodetrabajadore_path(@registrodetrabajadore), class: 'btn btn-primary' %>
 </div>
 
-<div class="container">
-    <table class = "table table-bordered table-striped">
-        <tr>
-            <th>nombre</th>
-            <th>edad</th>
-            <th>cargo</th>
-            <th>telefono</th>
-        </tr>
-        <tr>
-            <td><%= @registrodetrabajadore.nombre %></td>
-            <td><%= @registrodetrabajadore.edad %></td>
-            <td><%= @registrodetrabajadore.cargo %></td>
-            <td><%= @registrodetrabajadore.telefono %></td>
-        </tr>
-    </table>  
-</div> 
+<section class="row">
+  <aside class="col-xs-6">
+        <dl class="well well-sm , tab-content">
+        <dt>nombre:</dt>
+        <dd><%= @registrodetrabajadore.nombre %></dd>
+        <dt>edad:</dt>
+        <dd><%= @registrodetrabajadore.edad %></dd>
+        <dt>cargo:</dt>
+        <dd><%= @registrodetrabajadore.cargo %></dd>
+        <dt>telefono:</dt>
+        <dd><%= @registrodetrabajadore.telefono %></dd>
+    </dl>
+  </aside>
+</section>            

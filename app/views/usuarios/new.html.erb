@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p> 
 
 <section class="row">
-    <aside class="col-xs-6"> 
-        <p class="">Registro de Usuarios</p>
-
+    <aside class="col-md-6"> 
         <%= simple_form_for @usuario do |f| %>
             <%= f.input :identificacion %>
             <%= f.input :nombre %>
@@ -12,11 +10,4 @@
             <%= f.button :submit %>
         <% end %>
     </aside>
-    <article class="col=md-4">
-        <section class="well">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod facilis inventore sapiente 
-            debitis voluptate magni nam eveniet laboriosam quidem in dolore quia dolorem, ratione nesciunt
-            nulla reprehenderit esse quo. Exercitationem?</p>
-        </section>
-    </article>
 </section>  
