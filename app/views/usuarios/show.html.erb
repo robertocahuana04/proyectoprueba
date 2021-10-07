@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center , fs-1">usuario</h1>
+
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-primary' %>
+    <%= link_to 'atras', usuarios_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>identificacion:</dt>
+        <dd><%= @proveedor.identificacion%></dd>
+        <dt>nombre:</dt>
+        <dd><%= @proveedor.nombre%></dd>
+        <dt>telefono:</dt>
+        <dd><%= @proveedor.telefono%></dd>
+        <dt>direccion:</dt>
+        <dd><%= @proveedor.direccion%></dd>
+    </dl>
+  </aside>
+  <article class="col=md-4">
+    <section class="well">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod facilis inventore sapiente 
+        debitis voluptate magni nam eveniet laboriosam quidem in dolore quia dolorem, ratione nesciunt
+        nulla reprehenderit esse quo. Exercitationem?</p>
+    </section>
+</article> 
+</section>
