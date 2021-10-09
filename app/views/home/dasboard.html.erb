@@ -4,21 +4,26 @@
     <meta charset="utf-8">
     <title>HTML</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="dasboard.scss">
     </head>
     
     
     <body>
+        
 
+
+
+        
         <section>
             <%= form_for(current_user,
                 url: destroy_user_session_path, html: { method: :delete }) do |f| %>
-                <%= f.submit "Cerrar sesión" %>
-                <%= link_to "Ver todos los productos", productos_index_path %>
+                <%= f.submit "Cerrar sesión", class: 'btn btn-primary' %>
+                <%= link_to "Ver todos los productos", productos_index_path, class: 'btn btn-primary' %>
             <% end %>
         </section>
     </body>
 </html>
+
 
 
 

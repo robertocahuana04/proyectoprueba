@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  
+  resources :productos
   get 'productos/index'
   get 'productos/show'
   #devise_for :users

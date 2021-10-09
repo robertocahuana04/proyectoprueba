@@ -2,13 +2,13 @@
 
 <h1 class="text-center , fs-1">proveedor</h1>
 
-<section class="row">
-  <div class="container">
-    <%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %>
-    <%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
-  </div>
+<%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %>
+<%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
+
+<section class="flex-row">
+  
   <aside class="col-xs-6">
-    <dl class="well well-sm , tab-content">
+    <dl class="flex-nowrap , tab-content">
         <dt>codigo:</dt>
         <dd><%= @proveedor.codigo%></dd>
         <dt>nombre:</dt>
