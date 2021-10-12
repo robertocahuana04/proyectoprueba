@@ -5,25 +5,27 @@ class ProductosController < ApplicationController
 
   # before_action :authenticate_user!, only: [:index]
 
+  #get /producto/new
   def new
-    #get /producto/new
-      @producto = Producto.new   
+    @producto = Producto.new   
   end
 
+  #todo los registro SELET FRON productos
   def index
-    #todo los registro SELET FRON productos
     @producto = Producto.all
   end
 
+  #encontrar un registro por id
   def show
-    #encontrar un registro por id
-      @producto = Producto.find(params[:id])           
+    @producto = Producto.find(params[:id])           
   end
 
+  # GET /products/id/edit
   def edit
     @producto = Producto.find(params[:id])
   end
 
+  # POST /products
   def create   
       @producto = Producto.new(producto_params)   
       if @producto.save   
@@ -46,8 +48,8 @@ class ProductosController < ApplicationController
         :remitente,
       )
   end
-
-  
+ 
+  # PATCH/PUT /products/id
   def update
       @producto = Producto.find(params[:id])
       if @producto.update(producto_params)
@@ -69,9 +71,9 @@ class ProductosController < ApplicationController
         :remitente
       )
   end
-   
-  def destroy 
-      #DELETE /producto/id  
+ 
+  # DELETE /products/id
+  def destroy  
       @producto = Producto.find(params[:id])   
       if @producto.destroy   #Destroy eliminar el objeto de la BD
         flash[:notice] = '¡Producto eliminado!'  

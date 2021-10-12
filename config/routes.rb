@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
+  root to: "home#dasboard"
   resources :productos
   get 'productos/index'
   get 'productos/show'
   #devise_for :users
-  root to: "home#dasboard"
+  
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   
   resources :usuarios
