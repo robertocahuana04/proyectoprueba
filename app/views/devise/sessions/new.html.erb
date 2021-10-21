@@ -1,30 +1,35 @@
-<div class="absoluteCenteredDiv">
+<div class="col-md-6 col-lg-4 offset-lg-4 offset-md-3 mt-5">
+  <div class="bg-light p-5 border shadow"> 
 
-  <h2>Iniciar sesión</h2>
+      <h2 class="text-center , fs-1">Iniciar sesión</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "correo electronico" %>
-    </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
+        <div class="text-center mb-0">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "correo electronico" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "Contraseña" %>
-    </div>
+        <div class="text-center mb-0">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "Contraseña" %>
+        </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end %>
+        <% if devise_mapping.rememberable? %>
+          <div class="text-center mb-0">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
 
-    <div class="actions">
-      <%= f.submit "Iniciar sesión" %>
-    </div>
-  <% end %>
+        <div class="text-center mb-0">
+          <%= f.submit "Iniciar sesión", class:"btn btn-primary" %>
+        </div>
+        <% end %>
 
-  <%= render "devise/shared/links" %>
+      <p class="text-center mb-0">
+        <%= render "devise/shared/links" %>
+      </p>  
+  </div>    
 </div>
 

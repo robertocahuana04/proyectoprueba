@@ -4,7 +4,7 @@
 
 <div>
 <%= link_to 'Crear producto', new_producto_path, class: 'btn btn-primary' %>
-<%= link_to "dasboard", root_path, class: 'btn btn-primary' %>
+<%= link_to "landing", root_path, class: 'btn btn-primary' %>
 </div>
 
 <div>
@@ -28,7 +28,7 @@
         <td><%= producto.remitente %></td>
         <td><%= producto.tipo %></td>
         <td><%= link_to 'Show', producto_path(producto) %></td>
-        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Editar', edit_producto_path(@producto) %></td>
         <td><%= link_to 'Destroy', producto_path(producto),
         method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>

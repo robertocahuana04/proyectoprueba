@@ -1,16 +1,15 @@
 class ProductosController < ApplicationController
 
-
   before_action :authenticate_user!
 
   # before_action :authenticate_user!, only: [:index]
 
-  #get /producto/new
+  # Método GET  para  el formulario de nuevo producto 
   def new
     @producto = Producto.new   
   end
 
-  #todo los registro SELET FRON productos
+   # Método GET para obtener todos los productos de la base de datos
   def index
     @producto = Producto.all
   end
@@ -20,17 +19,17 @@ class ProductosController < ApplicationController
     @producto = Producto.find(params[:id])           
   end
 
-  # GET /products/id/edit
+  # Método GET  para  editar un producto basado en id
   def edit
     @producto = Producto.find(params[:id])
   end
 
-  # POST /products
+  # Método POST  para  procesar datos de formularios 
   def create   
-      @producto = Producto.new(producto_params)   
+      @producto = Producto.new(params[:producto])   
       if @producto.save   
         flash[:notice] = 'Producto agregado!'   
-        redirect_to (@producto)   
+        redirect_to @producto 
       else   
         flash[:error] = 'No se pudo editar el productos!'   
         render "new"   
@@ -48,8 +47,8 @@ class ProductosController < ApplicationController
         :remitente,
       )
   end
- 
-  # PATCH/PUT /products/id
+  
+  # Método PUT/PATCH  para  actualizar  en la  base de datos un producto basado en id
   def update
       @producto = Producto.find(params[:id])
       if @producto.update(producto_params)
@@ -72,10 +71,10 @@ class ProductosController < ApplicationController
       )
   end
  
-  # DELETE /products/id
+  #  DELETE  método  para  eliminar un producto de la base de datos basado en id 
   def destroy  
       @producto = Producto.find(params[:id])   
-      if @producto.destroy   #Destroy eliminar el objeto de la BD
+      if @producto.destroy 
         flash[:notice] = '¡Producto eliminado!'  
         redirect_to producto_path 
       else   

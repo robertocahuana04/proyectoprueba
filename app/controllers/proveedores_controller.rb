@@ -48,10 +48,9 @@ class ProveedoresController < ApplicationController
     #
     def update
         @proveedor = Proveedor.find(params[:id])
-        if @proveedor.update(proveedor_params)
-          redirect_to @proveedor
+        if @proveedor.update_attributes(params[:proveedor])
+          redirect_to @proveedor , :notice => 'Proveedor was successfully updated.'
         else
-          @proveedor = Proveedor.all
           render "edit", status: :unprocessable_entity
         end
     end
@@ -95,5 +94,4 @@ class ProveedoresController < ApplicationController
           :destinario,
         )
     end
-
 end
