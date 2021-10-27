@@ -2,26 +2,25 @@
 
 <div class="container">
     <%= link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-primary' %>
+    <%= link_to 'atras', productos_path, class: 'btn btn-primary' %>
 </div>
 
-<div class="container">
-    <table class = "table table-bordered table-striped"> 
-        <tr>
-            <th>codigo</th>
-            <th>nombre</th>
-            <th>referencia</th>
-            <th>stock</th>
-            <th>remitente</th>
-            <th>tipo_id</th>
-        </tr>
-        
-        <tr>
-        <td><%= @producto.codigo%></td>
-        <td><%= @producto.nombre%></td>
-        <td><%= @producto.referencia%></td>
-        <td><%= @producto.stock%></td>
-        <td><%= @producto.remitente%></td>
-        <td><%= @producto.tipo_id%></td>
-        </tr>
-    </table> 
-</div>    
+
+<section class="flex-row">
+    <aside class="col-xs-6">
+      <dl class="flex-nowrap , tab-content">
+          <dt>codigo:</dt>
+          <dd><%= @producto.codigo%></dd>
+          <dt>nombre:</dt>
+          <dd><%= @producto.nombre%></dd>
+          <dt>referencia:</dt>
+          <dd><%= @producto.referencia%></dd>
+          <dt>stock:</dt>
+          <dd><%= @producto.stock%></dd>
+          <dt>remitente:</dt>
+          <dd><%= @producto.remitente%></dd>
+          <dt>tipo_id:</dt>
+          <dd><%= @producto.tipo_id%></dd>
+      </dl>
+    </aside>
+  </section>
