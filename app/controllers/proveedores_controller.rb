@@ -46,7 +46,7 @@ class ProveedoresController < ApplicationController
       @proveedor = Proveedor.find(params[:id])   
       if @proveedor.destroy   #Destroy eliminar el objeto de la BD
         flash[:notice] = '¡Proveedor eliminado!'  
-        redirect_to proveedore_path 
+        redirect_to proveedor_path 
       else   
         flash[:error] = '¡Error al eliminar este Proveedor!'   
         render "destroy"   

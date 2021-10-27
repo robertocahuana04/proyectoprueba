@@ -26,7 +26,7 @@
         <td><%= compra.forma_de_pago %></td>
         <td><%= link_to 'Ver', compra_path(compra), class: 'btn btn-success' %></td>
         <td><%= link_to 'Editar', edit_compra_path(@compra), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Destroy', compra_path(compra),
+        <td><%= link_to 'Eliminar', compra_path(compra),
         method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger'  %></td>
       </tr>
     <% end %>
