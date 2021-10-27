@@ -11,6 +11,10 @@ class OrganizacionesController < ApplicationController
         @organizacione = Organizacione.find(params[:id])           
     end
 
+    def edit
+        @organizacione = Organizacione.find(params[:id])
+    end
+
     def create
         @organizacione = Organizacione.new( organizacione_params)
         if @organizacione.save 
@@ -20,39 +24,16 @@ class OrganizacionesController < ApplicationController
         end
     end
      
-    private
-
-    def organizacione_params
-        params.require(:organizacione).permit(
-          :tipo_de_organizacion,
-          :numero_de_empleado,
-          :representantes,
-        )
-    end
-
-    def edit
-        @organizacione = Organizacione.find(params[:id])
-    end
-
-
+    
     def update
         @organizacione = Organizacione.find(params[:id])
-       
         if @organizacione.update(organizacione_params)
-          redirect_to @tipo
+          redirect_to @organizacione
         else
-          render 'edit'
+          render "edit", status: :unprocessable_entity
         end
     end
 
-    private
-
-    def organizacione_params
-        params.require(:organizacione).permit(
-          :tipo,
-          :estado,
-        )
-    end
 
     def destroy
         @organizacione = Organizacione.find(params[:id])
@@ -63,5 +44,15 @@ class OrganizacionesController < ApplicationController
             flash[:error] = 'Something went wrong'
             redirect_to tipo_url
         end
+    end
+
+    private
+
+    def organizacione_params
+        params.require(:organizacione).permit(
+          :tipo_de_organizacion,
+          :numero_de_empleado,
+          :representantes,
+        )
     end
 end

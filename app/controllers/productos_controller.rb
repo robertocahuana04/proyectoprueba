@@ -26,7 +26,7 @@ class ProductosController < ApplicationController
 
   # Método POST  para  procesar datos de formularios 
   def create   
-      @producto = Producto.new(params[:producto])   
+      @producto = Producto.new(producto_params)   
       if @producto.save   
         flash[:notice] = 'Producto agregado!'   
         redirect_to @producto 
@@ -35,52 +35,26 @@ class ProductosController < ApplicationController
         render "new"   
       end   
   end   
-   
-  private
 
-  def producto_params
-      params.require(:producto).permit(
-        :codigo,
-        :nombre,
-        :referencia,
-        :stock,
-        :remitente,
-      )
-  end
-  
-  # Método PUT/PATCH  para  actualizar  en la  base de datos un producto basado en id
   def update
-      @producto = Producto.find(params[:id])
-      if @producto.update(producto_params)
-        redirect_to @producto
-      else
-        @producto = Producto.all
-        render "edit", status: :unprocessable_entity
-      end
+    @producto = Producto.find(params[:id])
+    if @producto.update(producto_params)
+      redirect_to @producto
+    else
+      @producto = Producto.all
+      render "edit", status: :unprocessable_entity
+    end
   end
 
-  private
-
-  def producto_params
-      params.require(:producto).permit(
-        :codigo,
-        :nombre,
-        :referencia,
-        :stock,
-        :remitente
-      )
-  end
- 
-  #  DELETE  método  para  eliminar un producto de la base de datos basado en id 
   def destroy  
-      @producto = Producto.find(params[:id])   
-      if @producto.destroy 
-        flash[:notice] = '¡Producto eliminado!'  
-        redirect_to producto_path 
-      else   
-        flash[:error] = '¡Error al eliminar este Producto!'   
-        render "destroy"   
-      end   
+    @producto = Producto.find(params[:id])   
+    if @producto.destroy 
+      flash[:notice] = '¡Producto eliminado!'  
+      redirect_to producto_path 
+    else   
+      flash[:error] = '¡Error al eliminar este Producto!'   
+      render "destroy"   
+    end   
   end
 
   private
@@ -92,6 +66,8 @@ class ProductosController < ApplicationController
         :referencia,
         :stock,
         :remitente,
+        :tipo_id
       )
   end
 end
+

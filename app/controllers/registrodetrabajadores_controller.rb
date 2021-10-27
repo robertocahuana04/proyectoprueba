@@ -24,17 +24,7 @@ class RegistrodetrabajadoresController < ApplicationController
             render :new
         end
     end
-     
-    private
-
-    def registrodetrabajadore_params
-        params.require(:registrodetrabajadore).permit(
-          :nombre,
-          :edad,
-          :cargo,
-          :telefono,
-        )
-    end
+    
 
     def update
         @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
@@ -46,6 +36,17 @@ class RegistrodetrabajadoresController < ApplicationController
         end
     end
 
+    def destroy  
+        @registrodetrabajadore = Registrodetrabajadore.find(params[:id])   
+        if @registrodetrabajadore.destroy 
+          flash[:notice] = '¡registrodetrabajadore eliminado!'  
+          redirect_to registrodetrabajadore_path 
+        else   
+          flash[:error] = '¡Error al eliminar este registrodetrabajadore!'   
+          render "destroy"   
+        end   
+      end
+
     private
 
     def registrodetrabajadore_params
@@ -57,5 +58,4 @@ class RegistrodetrabajadoresController < ApplicationController
         )
     end
 
-    
 end

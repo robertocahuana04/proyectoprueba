@@ -20,6 +20,15 @@ class ReclamosController < ApplicationController
         end
     end
 
+    def update
+        @reclamo = Reclamo.find(params[:id])
+        if @reclamo.update(reclamo_params)
+          redirect_to @reclamo
+        else
+          render "edit", status: :unprocessable_entity
+        end
+    end
+
     private
 
     def reclamo_params

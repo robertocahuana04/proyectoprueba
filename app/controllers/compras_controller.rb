@@ -15,24 +15,12 @@ class ComprasController < ApplicationController
     def create
         @compra = Compra.new( compra_params)
         if @compra.save 
-            redirect_to compra_path(@compra)
+            redirect_to @compra
         else
             render :new
         end
     end
      
-    private
-
-    def compra_params
-        params.require(:compra).permit(
-          :codigo_producto,
-          :nombre_del_cliente,
-          :identificacion_del_cliente,
-          :fecha_de_compra,
-          :tipo_producto,
-          :forma_de_pago,
-        )
-    end
 
     def edit
         @compra = Compra.find(params[:id])
@@ -49,18 +37,6 @@ class ComprasController < ApplicationController
         end
     end
 
-    private
-
-    def compra_params
-        params.require(:compra).permit(
-            :codigo_producto,
-            :nombre_del_cliente,
-            :identificacion_del_cliente,
-            :fecha_de_compra,
-            :tipo_producto,
-            :forma_de_pago,
-        )
-    end
 
     def destroy
         @compra = Compra.find(params[:id])
@@ -71,5 +47,18 @@ class ComprasController < ApplicationController
             flash[:error] = 'Something went wrong'
             redirect_to compra_url
         end
+    end
+
+    private
+
+    def compra_params
+        params.require(:compra).permit(
+          :codigo_producto,
+          :nombre_del_cliente,
+          :identificacion_del_cliente,
+          :fecha_de_compra,
+          :tipo_producto,
+          :forma_de_pago,
+        )
     end
 end

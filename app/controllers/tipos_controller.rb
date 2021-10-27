@@ -20,20 +20,10 @@ class TiposController < ApplicationController
             render :new
         end
     end
-     
-    private
-
-    def tipo_params
-        params.require(:tipo).permit(
-          :tipo,
-          :estado,
-        )
-    end
 
     def edit
         @tipo = Tipo.find(params[:id])
     end
-
 
     def update
         @tipo = Tipo.find(params[:id])
@@ -45,15 +35,6 @@ class TiposController < ApplicationController
         end
     end
 
-    private
-
-    def tipo_params
-        params.require(:tipo).permit(
-          :tipo,
-          :estado,
-        )
-    end
-
     def destroy
         @tipo = Tipo.find(params[:id])
         if @tipo.destroy
@@ -63,5 +44,14 @@ class TiposController < ApplicationController
             flash[:error] = 'Something went wrong'
             redirect_to tipo_url
         end
+    end
+
+    private
+
+    def tipo_params
+        params.require(:tipo).permit(
+          :tipo,
+          :estado,
+        )
     end
 end

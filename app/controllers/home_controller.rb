@@ -7,14 +7,5 @@ class HomeController < ApplicationController
   end
 
   def landing
-
   end  
-
-  def index
-    @producto  =  Producto.all
-  end
-
-  def show
-    @producto = Producto.find(params[:id])
-  end
 end

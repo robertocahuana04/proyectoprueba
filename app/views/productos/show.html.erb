@@ -1,10 +1,7 @@
-<p id="notice"><%= flash[:notice] %></p>
-
 <p class="text-center , fs-1">Productos</p>
 
 <div class="container">
-    <%= link_to 'Editar', edit_Producto_path(@Producto), class: 'btn btn-primary' %>
-    <%= link_to 'atras', Productos_path, class: 'btn btn-primary' %>
+    <%= link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-primary' %>
 </div>
 
 <div class="container">
@@ -19,12 +16,12 @@
         </tr>
         
         <tr>
-        <td><%= @Producto.codigo%></td>
-        <td><%= @Producto.nombre%></td>
-        <td><%= @Producto.referencia%></td>
-        <td><%= @Producto.stock%></td>
-        <td><%= @Producto.remitente%></td>
-        <td><%= @Producto.tipo_id%></td>
+        <td><%= @producto.codigo%></td>
+        <td><%= @producto.nombre%></td>
+        <td><%= @producto.referencia%></td>
+        <td><%= @producto.stock%></td>
+        <td><%= @producto.remitente%></td>
+        <td><%= @producto.tipo_id%></td>
         </tr>
     </table> 
 </div>    

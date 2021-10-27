@@ -20,20 +20,7 @@ class StoockdeproductosController < ApplicationController
             render :new
         end
     end
-     
-    private
 
-    def stoockdeproducto_params
-        params.require(:stoockdeproducto).permit(
-          :codigo,
-          :nombre,
-          :correoelectronico,
-          :telefono,
-          :direccion,
-          :ciudad,
-          :destinario,
-        )
-    end
 
     def edit
         @stoockdeproducto = Stoockdeproducto.find(params[:id])
@@ -50,6 +37,18 @@ class StoockdeproductosController < ApplicationController
         end
     end
 
+
+    def destroy
+        @stoockdeproducto = Stoockdeproducto.find(params[:id])
+        if @stoockdeproducto.destroy
+            flash[:success] = 'stoockdeproducto was successfully deleted.'
+            redirect_to stoockdeproducto_url
+        else
+            flash[:error] = 'Something went wrong'
+            redirect_to stoockdeproducto_url
+        end
+    end
+
     private
 
     def stoockdeproducto_params
@@ -62,16 +61,5 @@ class StoockdeproductosController < ApplicationController
           :ciudad,
           :destinario,
         )
-    end
-
-    def destroy
-        @stoockdeproducto = Stoockdeproducto.find(params[:id])
-        if @stoockdeproducto.destroy
-            flash[:success] = 'stoockdeproducto was successfully deleted.'
-            redirect_to stoockdeproducto_url
-        else
-            flash[:error] = 'Something went wrong'
-            redirect_to stoockdeproducto_url
-        end
     end
 end

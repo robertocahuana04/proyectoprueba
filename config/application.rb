@@ -18,5 +18,14 @@ module Proyectoprueba
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.to_prepare do
+      Devise::SessionsController.layout "empty"
+      Devise::RegistrationsController.layout "empty"
+      Devise::ConfirmationsController.layout "empty"
+      Devise::UnlocksController.layout "empty"
+      Devise::PasswordsController.layout "empty"
+    end
+    
   end
 end
