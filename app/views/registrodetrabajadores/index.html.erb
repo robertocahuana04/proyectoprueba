@@ -1,30 +1,29 @@
 <h1 class="text-center , fs-1">Listing Registrodetrabajadores</h1>
 
-<div class="container">
+<div>
 <%= link_to 'Crear trabajador', new_registrodetrabajadore_path, class: 'btn btn-primary' %>
 </div>
 
-<div class="container">
-  <table class = "table table-bordered table-striped">
+
+<table class = "table table-bordered table-striped">
+  <tr>
+    <th>nombre</th>
+    <th>edad</th>
+    <th>cargo</th>
+    <th>telefono</th>
+    <th colspan="4">accion</th>
+  </tr>
+
+  <% @registrodetrabajadore.each do |registrodetrabajadore| %>
     <tr>
-      <th>nombre</th>
-      <th>edad</th>
-      <th>cargo</th>
-      <th>telefono</th>
-      <th colspan="4">accion</th>
+      <td><%= registrodetrabajadore.nombre %></td>
+      <td><%= registrodetrabajadore.edad %></td>
+      <td><%= registrodetrabajadore.cargo %></td>
+      <td><%= registrodetrabajadore.telefono %></td>
+      <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', registrodetrabajadore_path(registrodetrabajadore),
+      method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
-  
-    <% @registrodetrabajadore.each do |registrodetrabajadore| %>
-      <tr>
-        <td><%= registrodetrabajadore.nombre %></td>
-        <td><%= registrodetrabajadore.edad %></td>
-        <td><%= registrodetrabajadore.cargo %></td>
-        <td><%= registrodetrabajadore.telefono %></td>
-        <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-success' %></td>
-        <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Destroy', registrodetrabajadore_path(registrodetrabajadore),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+  <% end %>
+</table>

@@ -26,14 +26,14 @@ class ProductosController < ApplicationController
 
   # Método POST  para  procesar datos de formularios 
   def create   
-      @producto = Producto.new(producto_params)   
-      if @producto.save   
-        flash[:notice] = 'Producto agregado!'   
-        redirect_to @producto 
-      else   
-        flash[:error] = 'No se pudo editar el productos!'   
-        render "new"   
-      end   
+    @producto = Producto.new(producto_params)   
+    if @producto.save   
+      flash[:notice] = 'Producto agregado!'   
+      redirect_to @producto 
+    else   
+      flash[:error] = 'No se pudo editar el productos!'   
+      render "new"   
+    end   
   end   
 
   def update
@@ -60,14 +60,15 @@ class ProductosController < ApplicationController
   private
 
   def producto_params
-      params.require(:producto).permit(
-        :codigo,
-        :nombre,
-        :referencia,
-        :stock,
-        :remitente,
-        :tipo_id
-      )
+    params.require(:producto).permit(
+      :codigo,
+      :nombre,
+      :referencia,
+      :stock,
+      :remitente,
+      :tipo_id
+    )
   end
+  
 end
 

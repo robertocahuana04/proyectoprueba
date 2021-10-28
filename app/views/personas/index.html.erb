@@ -2,30 +2,30 @@
 <h1 class="text-center , fs-1">Listing persona</h1>
 
 
-<div>
-  <table class = "table table-bordered table-striped">
-    <div>
-      <%= link_to 'Crear personas', new_persona_path, class: 'btn btn-primary' %>
-    </div>
+
+<table class = "table table-bordered table-striped">
+  <div>
+    <%= link_to 'Crear personas', new_persona_path, class: 'btn btn-primary' %>
+  </div>
+  <tr>
+    <th>cedula</th>
+    <th>genero</th>
+    <th>fecha_nacimiento</th>
+    <th>telefono</th>
+    <th colspan="4">Accion</th>
+  </tr>
+
+  <% @persona.each do |persona| %>
     <tr>
-      <th>cedula</th>
-      <th>genero</th>
-      <th>fecha_nacimiento</th>
-      <th>telefono</th>
-      <th colspan="4">Accion</th>
+      <td><%= persona.cedula %></td>
+      <td><%= persona.genero %></td>
+      <td><%= persona.fecha_nacimiento %></td>
+      <td><%= persona.telefono%></td>
+      <td><%= link_to 'Ver', persona_path(persona), class:"btn btn-success" %></td>
+      <td><%= link_to 'Editar', edit_persona_path(@persona), class:'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', persona_path(persona),
+      method: :delete, data: { confirm: 'Estas seguro?'}, :class =>"btn btn-danger" %></td>
+      
     </tr>
-  
-    <% @persona.each do |persona| %>
-      <tr>
-        <td><%= persona.cedula %></td>
-        <td><%= persona.genero %></td>
-        <td><%= persona.fecha_nacimiento %></td>
-        <td><%= persona.telefono%></td>
-        <td><%= link_to 'Ver', persona_path(persona), class:"btn btn-success" %></td>
-        <td><%= link_to 'Editar', edit_persona_path(@persona), class:'btn btn-primary' %></td>
-        <td><%= link_to 'Eliminar', persona_path(persona),
-        method: :delete, data: { confirm: 'Estas seguro?'}, :class =>"btn btn-danger" %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+  <% end %>
+</table>

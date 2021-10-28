@@ -6,27 +6,25 @@
 </div>
 
 
-<div>
-  <table class = "table table-bordered table-striped" >
+<table class = "table table-bordered table-striped" >
+  <tr>
+    <th>identificacion</th>
+    <th>nombre</th>
+    <th>telefono</th>
+    <th>direccion</th>
+    <th colspan="4">Accion</th>
+  </tr>
+
+  <% @usuario.each do |usuario| %>
     <tr>
-      <th>identificacion</th>
-      <th>nombre</th>
-      <th>telefono</th>
-      <th>direccion</th>
-      <th colspan="4">Accion</th>
+      <td><%= usuario.identificacion %></td>
+      <td><%= usuario.nombre %></td>
+      <td><%= usuario.telefono %></td>
+      <td><%= usuario.direccion %></td>
+      <td><%= link_to 'Ver', usuario_path(usuario), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', usuario_path(usuario), :method => :destroy,
+      :confirm => 'Are you sure?', :class => 'btn btn-danger' %></td>
     </tr>
-  
-    <% @usuario.each do |usuario| %>
-      <tr>
-        <td><%= usuario.identificacion %></td>
-        <td><%= usuario.nombre %></td>
-        <td><%= usuario.telefono %></td>
-        <td><%= usuario.direccion %></td>
-        <td><%= link_to 'Ver', usuario_path(usuario), class: 'btn btn-success' %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Eliminar', usuario_path(usuario), :method => :destroy,
-        :confirm => 'Are you sure?', :class => 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+  <% end %>
+</table>

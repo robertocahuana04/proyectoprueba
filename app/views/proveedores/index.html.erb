@@ -5,34 +5,34 @@
   <%= link_to 'Crear proveedor', new_proveedor_path, class: 'btn btn-primary' %>
 </div>
 
-<div>
-  <table class = "table table-bordered table-striped" >
+
+<table class = "table table-bordered table-striped" >
+  <tr>
+    <th>codigo</th>
+    <th>nombre</th>
+    <th>correoelectronico</th>
+    <th>telefono</th>
+    <th>direccion</th>
+    <th>ciudad</th>
+    <th>destinario</th>
+    <th colspan="7">Accion</th>
+  </tr>
+
+  <% @proveedor.each do |proveedor| %>
     <tr>
-      <th>codigo</th>
-      <th>nombre</th>
-      <th>correoelectronico</th>
-      <th>telefono</th>
-      <th>direccion</th>
-      <th>ciudad</th>
-      <th>destinario</th>
-      <th colspan="7">Accion</th>
+      <td><%= proveedor.codigo %></td>
+      <td><%= proveedor.nombre %></td>
+      <td><%= proveedor.correoelectronico %></td>
+      <td><%= proveedor.telefono %></td>
+      <td><%= proveedor.direccion %></td>
+      <td><%= proveedor.ciudad %></td>
+      <td><%= proveedor.destinario %></td>
+      <td><%= link_to 'Ver', proveedor_path(proveedor) , class: 'btn btn-success' %></td>
+      <td><%= link_to 'Editar', edit_proveedor_path(proveedor.id), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', proveedor_path(proveedor),
+      method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
-  
-    <% @proveedor.each do |proveedor| %>
-      <tr>
-        <td><%= proveedor.codigo %></td>
-        <td><%= proveedor.nombre %></td>
-        <td><%= proveedor.correoelectronico %></td>
-        <td><%= proveedor.telefono %></td>
-        <td><%= proveedor.direccion %></td>
-        <td><%= proveedor.ciudad %></td>
-        <td><%= proveedor.destinario %></td>
-        <td><%= link_to 'Ver', proveedor_path(proveedor) , class: 'btn btn-success' %></td>
-        <td><%= link_to 'Editar', edit_proveedor_path(proveedor.id), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Eliminar', proveedor_path(proveedor),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+  <% end %>
+</table>
+
 

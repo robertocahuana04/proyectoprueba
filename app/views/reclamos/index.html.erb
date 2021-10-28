@@ -1,34 +1,33 @@
 <h1 class="text-center , fs-1">Listing reclamos</h1>
 
-<div class="container">
+<div>
 <%= link_to 'Crear Reclamos', new_reclamo_path, class: 'btn btn-primary' %>
 </div>
 
-<div class="container">
-  <table class = "table table-bordered table-striped">
+
+<table class = "table table-bordered table-striped">
+  <tr>
+    <th>codigo</th>
+    <th>identificacion_del_cliente</th>
+    <th>nombre_del_cliente</th>
+    <th>producto_adquirido</th>
+    <th>fecha_de_compra</th>
+    <th>estado_del_producto</th>
+    <th colspan="6">Accion</th>
+  </tr>
+
+  <% @reclamo.each do |reclamo| %>
     <tr>
-      <th>codigo</th>
-      <th>identificacion_del_cliente</th>
-      <th>nombre_del_cliente</th>
-      <th>producto_adquirido</th>
-      <th>fecha_de_compra</th>
-      <th>estado_del_producto</th>
-      <th colspan="6">Accion</th>
+      <td><%= reclamo.codigo %></td>
+      <td><%= reclamo.identificacion_del_cliente %></td>
+      <td><%= reclamo.nombre_del_cliente %></td>
+      <td><%= reclamo.producto_adquirido%></td>
+      <td><%= reclamo.fecha_de_compra %></td>
+      <td><%= reclamo.estado_del_producto %></td>
+      <td><%= link_to 'Ver', reclamo_path(reclamo), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', reclamo_path(reclamo),
+      method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
-  
-    <% @reclamo.each do |reclamo| %>
-      <tr>
-        <td><%= reclamo.codigo %></td>
-        <td><%= reclamo.identificacion_del_cliente %></td>
-        <td><%= reclamo.nombre_del_cliente %></td>
-        <td><%= reclamo.producto_adquirido%></td>
-        <td><%= reclamo.fecha_de_compra %></td>
-        <td><%= reclamo.estado_del_producto %></td>
-        <td><%= link_to 'Ver', reclamo_path(reclamo), class: 'btn btn-success' %></td>
-        <td><%= link_to 'Editar', edit_reclamo_path(@reclamo), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Eliminar', reclamo_path(reclamo),
-        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+  <% end %>
+</table>
