@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :personas
   resources :compras
   resources :tipos
+  resources :generos
   resources :organizaciones
   resources :stoockdeproductos 
   resources :proveedores

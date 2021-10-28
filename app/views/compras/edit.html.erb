@@ -1,1 +1,50 @@
-<h1 class="titulo">editar compras</h1>
+<h1>Editing compras</h1>
+
+<%= link_to 'Back', compras_path, class: 'btn btn-primary' %>
+ 
+<%= form_for :compra, url: compra_path(@compra), method: :patch do |f| %>
+  <% if @compra.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@compra.errors.count, "error") %> prohibited
+      this compras from being saved:</h2>
+    <ul>
+    <% @genero.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :codigo_producto %><br>
+    <%= f.text_field :codigo_producto %>
+  </p>
+
+  <p>
+    <%= f.label :nombre_del_cliente %><br>
+    <%= f.text_field :nombre_del_cliente%>
+  </p>
+
+  <p>
+    <%= f.label :identificacion_del_cliente %><br>
+    <%= f.text_field :identificacion_del_cliente %>
+  </p>
+
+  <p>
+    <%= f.label :fecha_de_compra %><br>
+    <%= f.text_field :fecha_de_compra %>
+  </p>
+
+  <p>
+    <%= f.label :tipo_producto %><br>
+    <%= f.text_field :tipo_producto %>
+  </p>
+
+  <p>
+    <%= f.label :forma_de_pago %><br>
+    <%= f.text_field :forma_de_pago%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

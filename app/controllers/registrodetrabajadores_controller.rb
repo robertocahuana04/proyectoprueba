@@ -1,41 +1,41 @@
 class RegistrodetrabajadoresController < ApplicationController
 
     def index
-        @registrodetrabajadore = Registrodetrabajadore.all   
+      @registrodetrabajadore = Registrodetrabajadore.all   
     end
 
     def show
-        @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
+      @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
     end
 
     def edit
-        @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
+      @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
     end
 
     def new
-        @registrodetrabajadore = Registrodetrabajadore.new
+      @registrodetrabajadore = Registrodetrabajadore.new
     end
 
     def create
-        @registrodetrabajadore = Registrodetrabajadore.new( registrodetrabajadore_params)
-        if @registrodetrabajadore.save 
-            redirect_to registrodetrabajadore_path(@registrodetrabajadore)
-        else
-            render :new
-        end
+      @registrodetrabajadore = Registrodetrabajadore.new( registrodetrabajadore_params)
+      if @registrodetrabajadore.save 
+          redirect_to registrodetrabajadore_path(@registrodetrabajadore)
+      else
+          render :new
+      end
     end
     
 
     def update
-        @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
-       
-        if @registrodetrabajadore.update(registrodetrabajadore_params)
-          redirect_to @registrodetrabajadore
-        else
-          render 'edit'
-        end
+      @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
+      if @registrodetrabajadore.update(registrodetrabajadore_params)
+        redirect_to @registrodetrabajadore
+      else
+        render 'edit'
+      end
     end
 
+    
     def destroy  
         @registrodetrabajadore = Registrodetrabajadore.find(params[:id])   
         if @registrodetrabajadore.destroy 

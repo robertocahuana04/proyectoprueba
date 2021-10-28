@@ -4,28 +4,39 @@
 <%= link_to 'atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
 
 
-  <%= form_for :post do |f| %>
-    <p>
-      <%= f.label :nombre  %><br>
-      <%= f.text_field :nombre  %>
-    </p>
-
-    <p>
-      <%= f.label :edad %><br>
-      <%= f.text_area :edad %>
-    </p>
-
-    <p>
-      <%= f.label :cargo %><br>
-      <%= f.text_area :cargo %>
-    </p>
-
-    <p>
-      <%= f.label :telefono %><br>
-      <%= f.text_area :telefono %>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
+<%= form_for :registrodetrabajadore, url: registrodetrabajadore_path(@registrodetrabajadore), method: :patch do |f| %>
+<% if @registrodetrabajadore.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@registrodetrabajadore.errors.count, "error") %> prohibited
+    this article from being saved:</h2>
+  <ul>
+  <% @registrodetrabajadore.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
   <% end %>
+  </ul>
+</div>
+<% end %>
+  <p>
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </p>
+
+  <p>
+    <%= f.label :edad %><br>
+    <%= f.text_field :edad %>
+  </p>
+
+  <p>
+    <%= f.label :cargo %><br>
+    <%= f.text_field :cargo %>
+  </p>
+
+  <p>
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

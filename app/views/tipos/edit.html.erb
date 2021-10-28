@@ -1,19 +1,30 @@
-<p class="text-center , fs-1">editar tipos</p>
+<h1>Editing tipos</h1>
 
-<%= link_to 'listado tipo', tipo_path, class: 'btn btn-primary' %>
 <%= link_to 'Back', tipos_path, class: 'btn btn-primary' %>
+ 
+<%= form_for :tipo, url: tipo_path(@tipo), method: :patch do |f| %>
+  <% if @tipo.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tipo.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @tipo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </p>
 
-<%= form_for :post do |f| %>
-    <p>
-      <%= f.label :tipo %><br>
-      <%= f.text_field :tipo %>
-    </p>
-
-    <p>
-      <%= f.label :estado %><br>
-      <%= f.text_area :estado %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+  <p>
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>

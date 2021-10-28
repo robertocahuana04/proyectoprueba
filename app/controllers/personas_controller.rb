@@ -10,11 +10,11 @@ class PersonasController < ApplicationController
   end
 
   def show
-    @persona = Persona.find(params[:id])           
+    @persona = Persona.find(params[:id])        
   end
 
   def edit
-    @persona = Persona.find(params[:id])
+    
   end
 
   def create
@@ -54,9 +54,9 @@ class PersonasController < ApplicationController
   def persona_params
     params.require(:persona).permit(
       :cedula,
-      :genero,
       :fecha_nacimiento,
       :telefono,
+      :genero_id
     )
   end
 end

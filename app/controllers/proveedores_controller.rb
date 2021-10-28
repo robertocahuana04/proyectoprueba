@@ -1,40 +1,39 @@
 class ProveedoresController < ApplicationController
     
-    
+  #get /proveedores/new 
   def new
-    #get /proveedores/new
-      @proveedor = Proveedor.new   
+    @proveedor = Proveedor.new   
   end
 
+  #todo los registro SELET FRON proveedor
   def index
-    #todo los registro SELET FRON proveedor
     @proveedor = Proveedor.all
   end
 
   def show
     #encontrar un registro por id
-      @proveedor = Proveedor.find(params[:id])           
-  end
-
-  def create   
-      @proveedor = Proveedor.new(proveedor_params)   
-      if @proveedor.save   
-        flash[:notice] = 'Proveedor agregado!'   
-        redirect_to (@proveedor)   
-      else   
-        flash[:error] = 'No se pudo editar el proveedor!'   
-        render "new"   
-      end   
+    @proveedor = Proveedor.find(params[:id])           
   end
 
   def edit
     @proveedor = Proveedor.find(params[:id])
   end
 
+  def create   
+    @proveedor = Proveedor.new(proveedor_params)   
+    if @proveedor.save   
+      flash[:notice] = 'Proveedor agregado!'   
+      redirect_to (@proveedor)   
+    else   
+      flash[:error] = 'No se pudo editar el proveedor!'   
+      render "new"   
+    end   
+  end
+
   #
   def update
       @proveedor = Proveedor.find(params[:id])
-      if @proveedor.update_attributes(params[:proveedor])
+      if @proveedor.update(proveedor_params)
         redirect_to @proveedor , :notice => 'Proveedor was successfully updated.'
       else
         render "edit", status: :unprocessable_entity

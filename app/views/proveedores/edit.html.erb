@@ -3,45 +3,56 @@
 <%= link_to 'listado proveedor', proveedores_path, class: 'btn btn-primary' %>
 <%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
 
-
-
-  <%= form_for :proveedor do |f| %>
-    <p>
-      <%= f.label :codigo %><br>
-      <%= f.text_field :codigo %>
-    </p>
-
-    <p>
-      <%= f.label :nombre %><br>
-      <%= f.text_area :nombre %>
-    </p>
-
-    <p>
-      <%= f.label :correoelectronico %><br>
-      <%= f.text_area :correoelectronico%>
-    </p>
-
-    <p>
-      <%= f.label :telefono %><br>
-      <%= f.text_area :telefono %>
-    </p>
-
-    <p>
-      <%= f.label :direccion %><br>
-      <%= f.text_area :direccion%>
-    </p>
-
-    <p>
-      <%= f.label :ciudad %><br>
-      <%= f.text_area :ciudad %>
-    </p>
-
-    <p>
-      <%= f.label :destinario%><br>
-      <%= f.text_area :destinario%>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
+ 
+<%= form_for :proveedor, url: proveedor_path(@proveedor), method: :patch do |f| %>
+  <% if @proveedor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@proveedor.errors.count, "error") %> prohibited
+      this proveedor from being saved:</h2>
+    <ul>
+    <% @tipo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
+  <p>
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
+  </p>
+
+  <p>
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </p>
+
+  <p>
+    <%= f.label :correoelectronico%><br>
+    <%= f.text_field :correoelectronico %>
+  </p>
+
+  <p>
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </p>
+
+  <p>
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </p>
+
+  <p>
+    <%= f.label :ciudad %><br>
+    <%= f.text_field :ciudad %>
+  </p>
+
+  <p>
+    <%= f.label :destinario %><br>
+    <%= f.text_field :destinario %>
+  </p>
+
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

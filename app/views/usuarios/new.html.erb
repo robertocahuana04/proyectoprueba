@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p> 
 
 <section class="row">
-    <aside class="col-md-6"> 
-        <%= simple_form_for @usuario do |f| %>
-            <%= f.input :identificacion %>
-            <%= f.input :nombre %>
-            <%= f.input :telefono %>
-            <%= f.input :direccion %>
-            <%= f.button :submit , class: 'btn btn-primary' %>
-        <% end %>
-    </aside>
+  <aside class="col-md-6"> 
+    <%= simple_form_for @usuario do |f| %>
+      <%= f.input :identificacion %>
+      <%= f.input :nombre %>
+      <%= f.input :telefono %>
+      <%= f.input :direccion %>
+      <%= f.button :submit , class: 'btn btn-primary' %>
+    <% end %>
+  </aside>
 </section>  

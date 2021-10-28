@@ -1,0 +1,14 @@
+<h1 class="text-center , fs-1">organizaciones</h1>
+
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_genero_path(@genero), class: 'btn btn-primary' %>
+    <%= link_to 'Atras', generos_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>genero:</dt>
+        <dd><%= @genero.genero%></dd>
+    </dl>
+  </aside>
+</section>  
