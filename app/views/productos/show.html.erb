@@ -1,26 +1,26 @@
-<h1 class="text-center , fs-1">Productos</h1>
+<h1 class="text-center , fs-1">Ver Productos</h1>
 
 <div class="container">
-    <%= link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-primary' %>
-    <%= link_to 'atras', productos_path, class: 'btn btn-primary' %>
+  <%= link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-primary' %>
+  <%= link_to 'Atras', productos_path, class: 'btn btn-primary' %>
 </div>
 
 
 <section class="flex-row">
-    <aside class="col-xs-6">
-      <dl class="flex-nowrap , tab-content">
-          <dt>codigo:</dt>
-          <dd><%= @producto.codigo%></dd>
-          <dt>nombre:</dt>
-          <dd><%= @producto.nombre%></dd>
-          <dt>referencia:</dt>
-          <dd><%= @producto.referencia%></dd>
-          <dt>stock:</dt>
-          <dd><%= @producto.stock%></dd>
-          <dt>remitente:</dt>
-          <dd><%= @producto.remitente%></dd>
-          <dt>tipo_id:</dt>
-          <dd><%= @producto.tipo_id%></dd>
-      </dl>
-    </aside>
+  <aside class="col-xs-6">
+    <dl class="flex-nowrap , tab-content">
+      <dt>codigo:</dt>
+      <dd><%= @producto.codigo%></dd>
+      <dt>nombre:</dt>
+      <dd><%= @producto.nombre%></dd>
+      <dt>referencia:</dt>
+      <dd><%= @producto.referencia%></dd>
+      <dt>stock:</dt>
+      <dd><%= @producto.stock%></dd>
+      <dt>remitente:</dt>
+      <dd><%= @producto.remitente%></dd>
+      <dt>tipo_id:</dt>
+      <dd><%= @producto.tipo_id%></dd>
+    </dl>
+  </aside>
   </section>

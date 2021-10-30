@@ -1,15 +1,6 @@
-<h1 class="text-center , fs-1">Registro de stoockdeproductos</h1>
-
-<div class="row">
-    <div class="col-md-6">
-        <%= simple_form_for @stoockdeproducto do |f| %>
-            <%= f.input :codigo %>
-            <%= f.input :nombre %>
-            <%= f.input :cantidad_existente %>
-            <%= f.input :referencia %>
-            <%= f.input :tipo %>
-            <%= f.input :proveedor %>
-            <%= f.button :submit , class: 'btn btn-primary'%>
-        <% end %>
-    </div>
-</div>
+<section class="row">
+  <div class="col-md-6">
+    <h1 class="text-center , fs-1">nuevo productos</h1>
+      <%= render  "form" %>
+  </div>    
+</section>

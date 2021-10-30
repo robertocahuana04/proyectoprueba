@@ -1,12 +1,7 @@
-<h1 class="titulo">Registro de trabajadores</h1>
-<div class="row">
-    <div class="col-md-6">
-        <%= simple_form_for @registrodetrabajadore do |f| %>
-            <%= f.input :nombre %>
-            <%= f.input :edad %>
-            <%= f.input :cargo %>
-            <%= f.input :telefono %>
-            <%= f.button :submit , class: 'btn btn-primary' %>
-        <% end %>
-    </div>
-</div>
+<h1 class="text-center , fs-1">nuevo productos</h1>
+
+<section class="row">
+  <div class="col-md-6">
+    <%= render  "form" %>
+  </div>    
+</section>

@@ -1,0 +1,16 @@
+<section class="row">
+  <aside class="col-md-6"> 
+    <%= simple_form_for @proveedor do |f| %>
+      <%= f.input :codigo %>
+      <%= f.input :nombre %>
+      <%= f.input :correoelectronico %>
+      <%= f.input :telefono %>
+      <%= f.input :direccion %>
+      <%= f.input :ciudad %>
+      <%= f.input :destinario %>
+      <div class="form-actions">
+        <%= f.button :submit , class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </aside>
+</section>

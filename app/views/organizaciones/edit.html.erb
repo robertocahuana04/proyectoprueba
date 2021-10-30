@@ -1,27 +1,9 @@
-<h1 class="text-center , fs-1">editar organizaciones</h1>
+<h1 class="text-center , fs-1">Editing compras</h1>
 
-<%= link_to 'listado organizaciones', organizacione_path, class: 'btn btn-primary' %>
 <%= link_to 'Atras', organizaciones_path, class: 'btn btn-primary' %>
 
-
-<%= form_for :post do |f| %>
-    <p>
-      <%= f.label :tipo_de_organizacion %><br>
-      <%= f.text_field :tipo_de_organizacion %>
-    </p>
-
-    <p>
-      <%= f.label :numero_de_empleado %><br>
-      <%= f.text_area :numero_de_empleado %>
-    </p>
-
-    <p>
-      <%= f.label :representantes%><br>
-      <%= f.text_area :representantes%>
-    </p>
-
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
-  
+<section class="row">
+  <div class="col-md-6">
+    <%= render  "form" %>
+  </div>    
+</section>

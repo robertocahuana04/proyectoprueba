@@ -15,9 +15,9 @@ class ComprasController < ApplicationController
   def create
     @compra = Compra.new( compra_params)
     if @compra.save 
-        redirect_to @compra
+      redirect_to @compra
     else
-        render :new
+      render :new
     end
   end  
 
@@ -28,7 +28,7 @@ class ComprasController < ApplicationController
   def update
     @compra = Compra.find(params[:id])
     if @compra.update(compra_params)
-      redirect_to @compra
+      redirect_to @compra, notice: 'compras was successfully updated.'
     else
       render 'edit'
     end

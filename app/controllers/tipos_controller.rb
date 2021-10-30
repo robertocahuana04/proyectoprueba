@@ -25,10 +25,11 @@ class TiposController < ApplicationController
     end
   end
 
+
   def update
     @tipo = Tipo.find(params[:id])
     if @tipo.update(tipo_params)
-      redirect_to tipo
+      redirect_to @tipo
     else
       render 'edit'
     end

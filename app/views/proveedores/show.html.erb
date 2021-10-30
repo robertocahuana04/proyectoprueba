@@ -1,26 +1,25 @@
-<h1 class="text-center , fs-1">proveedor</h1>
+<h1 class="text-center , fs-1">Ver proveedor</h1>
 
 <%= link_to 'Editar', edit_proveedor_path(@proveedor), class: 'btn btn-primary' %>
 <%= link_to 'atras', proveedores_path, class: 'btn btn-primary' %>
 
 <section class="flex-row">
-  
   <aside class="col-xs-6">
     <dl class="flex-nowrap , tab-content">
-        <dt>codigo:</dt>
-        <dd><%= @proveedor.codigo%></dd>
-        <dt>nombre:</dt>
-        <dd><%= @proveedor.nombre%></dd>
-        <dt>correoelectronico:</dt>
-        <dd><%= @proveedor.correoelectronico%></dd>
-        <dt>telefono:</dt>
-        <dd><%= @proveedor.telefono%></dd>
-        <dt>direccion:</dt>
-        <dd><%= @proveedor.direccion%></dd>
-        <dt>ciudad:</dt>
-        <dd><%= @proveedor.ciudad%></dd>
-        <dt>destinario:</dt>
-        <dd><%= @proveedor.destinario%></dd>
+      <dt>codigo:</dt>
+      <dd><%= @proveedor.codigo%></dd>
+      <dt>nombre:</dt>
+      <dd><%= @proveedor.nombre%></dd>
+      <dt>correoelectronico:</dt>
+      <dd><%= @proveedor.correoelectronico%></dd>
+      <dt>telefono:</dt>
+      <dd><%= @proveedor.telefono%></dd>
+      <dt>direccion:</dt>
+      <dd><%= @proveedor.direccion%></dd>
+      <dt>ciudad:</dt>
+      <dd><%= @proveedor.ciudad%></dd>
+      <dt>destinario:</dt>
+      <dd><%= @proveedor.destinario%></dd>
     </dl>
   </aside>
 </section>

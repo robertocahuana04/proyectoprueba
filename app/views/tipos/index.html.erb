@@ -5,7 +5,7 @@
 </div>
 
 
-<table class = "table table-bordered table-striped">
+<table class = "table table-bordered table-hover">
   <tr>
     <th>tipo</th>
     <th>estado</th>
@@ -17,7 +17,7 @@
       <td><%= tipo.tipo %></td>
       <td><%= tipo.estado %></td>
       <td><%= link_to 'Ver', tipo_path(tipo), class: 'btn btn-success' %></td>
-      <td><%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Editar', edit_tipo_path(tipo), class: 'btn btn-primary' %></td>
       <td><%= link_to 'Elimirar', tipo_path(tipo),
       method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>

@@ -1,18 +1,6 @@
-
-<p class="text-center , fs-1">Registro de compras</p>
-<div class="container">
-    <div class="row">
-        <%= simple_form_for @compra do |f| %>
-            <%= f.input :codigo_producto %>
-            <%= f.input :nombre_del_cliente %>
-            <%= f.input :identificacion_del_cliente %>
-            <%= f.input :fecha_de_compra %>
-            <%= f.input :tipo_producto %>
-            <%= f.input :forma_de_pago %>
-            <%= f.button :submit , class: 'btn btn-primary' %>
-        <% end %>
-    </div>
-</div>
-
-
-
+<section class="row">
+    <div class="col-md-6">
+     <h1 class="text-center , fs-1">nuevo reclamo</h1>
+        <%= render  "form" %>
+    </div>    
+  </section>

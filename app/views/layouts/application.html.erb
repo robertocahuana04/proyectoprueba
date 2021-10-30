@@ -17,12 +17,18 @@
 
   
   <body>
+
+    
     
     
     <main class="container">
       <%= render "layouts/menu" %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="alert-box success radius"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert-box warning radius"><%= alert %></p>
+      <% end %>
       <%= yield %>
       <%= render "layouts/footer" %>
     </main>

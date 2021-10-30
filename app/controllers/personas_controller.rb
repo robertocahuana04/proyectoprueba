@@ -14,7 +14,7 @@ class PersonasController < ApplicationController
   end
 
   def edit
-    
+    @persona = Persona.find(params[:id])
   end
 
   def create

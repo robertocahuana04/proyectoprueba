@@ -24,14 +24,14 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)   
     if @usuario.save   
       flash[:notice] = 'usuario agregado!'   
-      redirect_to (@usuario)   
+      redirect_to @usuario   
     else  
       render "new"   
     end   
   end   
 
   def update
-    @usuario = usuario.find(params[:id])
+    @usuario = Usuario.find(params[:id])
     if @usuario.update(usuario_params)
       redirect_to @usuario
     else

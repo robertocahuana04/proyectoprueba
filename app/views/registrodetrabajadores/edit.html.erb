@@ -1,42 +1,9 @@
-<h1>editar registrodetrabajadore</h1>
+<h1 class="text-center , fs-1">editar registrodetrabajadore</h1>
 
-<%= link_to 'listado registrodetrabajadores', registrodetrabajadores_path, class: 'btn btn-primary' %>
-<%= link_to 'atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
+<%= link_to 'Atras', registrodetrabajadores_path, class: 'btn btn-primary' %>
 
-
-<%= form_for :registrodetrabajadore, url: registrodetrabajadore_path(@registrodetrabajadore), method: :patch do |f| %>
-<% if @registrodetrabajadore.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@registrodetrabajadore.errors.count, "error") %> prohibited
-    this article from being saved:</h2>
-  <ul>
-  <% @registrodetrabajadore.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-</div>
-<% end %>
-  <p>
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </p>
-
-  <p>
-    <%= f.label :edad %><br>
-    <%= f.text_field :edad %>
-  </p>
-
-  <p>
-    <%= f.label :cargo %><br>
-    <%= f.text_field :cargo %>
-  </p>
-
-  <p>
-    <%= f.label :telefono %><br>
-    <%= f.text_field :telefono %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<section class="row">
+  <div class="col-md-6">
+      <%= render  "form" %>
+  </div>    
+</section>

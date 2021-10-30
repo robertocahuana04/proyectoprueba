@@ -1,18 +1,7 @@
-<p id="notice"><%= notice %></p> 
-
 <section class="row">
-    <aside class="col-md-6"> 
-        <h1 class="">Registro de proveedor</h1>
+    <div class="col-md-6">
+     <h1 class="text-center , fs-1">nuevo proveedor</h1>
 
-        <%= simple_form_for @proveedor do |f| %>
-            <%= f.input :codigo %>
-            <%= f.input :nombre %>
-            <%= f.input :correoelectronico %>
-            <%= f.input :telefono %>
-            <%= f.input :direccion %>
-            <%= f.input :ciudad %>
-            <%= f.input :destinario %>
-            <%= f.button :submit , class: 'btn btn-primary' %>
-        <% end %>
-    </aside>
-</section>  
+        <%= render  "form" %>
+    </div>    
+</section>

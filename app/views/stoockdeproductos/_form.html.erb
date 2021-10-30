@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6">
+    <%= simple_form_for @stoockdeproducto do |f| %>
+      <%= f.input :codigo %>
+      <%= f.input :nombre %>
+      <%= f.input :cantidad_existente %>
+      <%= f.input :referencia %>
+      <%= f.input :tipo %>
+      <%= f.input :proveedor %>
+      <%= f.button :submit , class: 'btn btn-primary'%>
+    <% end %>
+  </div>
+</div>

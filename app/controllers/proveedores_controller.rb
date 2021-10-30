@@ -30,7 +30,6 @@ class ProveedoresController < ApplicationController
     end   
   end
 
-  #
   def update
       @proveedor = Proveedor.find(params[:id])
       if @proveedor.update(proveedor_params)
