@@ -24,8 +24,7 @@ class ProveedoresController < ApplicationController
     if @proveedor.save   
       flash[:notice] = 'Proveedor agregado!'   
       redirect_to (@proveedor)   
-    else   
-      flash[:error] = 'No se pudo editar el proveedor!'   
+    else      
       render "new"   
     end   
   end
@@ -33,7 +32,7 @@ class ProveedoresController < ApplicationController
   def update
       @proveedor = Proveedor.find(params[:id])
       if @proveedor.update(proveedor_params)
-        redirect_to @proveedor , :notice => 'Proveedor was successfully updated.'
+        redirect_to @proveedor , :notice => 'Proveedor fue actualizado con éxito.'
       else
         render "edit", status: :unprocessable_entity
       end
@@ -45,8 +44,7 @@ class ProveedoresController < ApplicationController
       if @proveedor.destroy   #Destroy eliminar el objeto de la BD
         flash[:notice] = '¡Proveedor eliminado!'  
         redirect_to proveedor_path 
-      else   
-        flash[:error] = '¡Error al eliminar este Proveedor!'   
+      else    
         render "destroy"   
       end   
   end

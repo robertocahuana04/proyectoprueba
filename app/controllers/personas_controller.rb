@@ -20,7 +20,7 @@ class PersonasController < ApplicationController
   def create
     @persona = Persona.new(persona_params)
     if @persona.save
-      flash[:notice] = "persona was submitted succsefully"
+      flash[:notice] = 'persona agregada!'
       redirect_to personas_path
     else
       render :new
@@ -30,6 +30,7 @@ class PersonasController < ApplicationController
   def update
     @persona = Persona.find(params[:id])
     if @persona.update(persona_params)
+      flash[:notice] = 'persona atualizada!'
       redirect_to @persona
     else
       @persona = Persona.all

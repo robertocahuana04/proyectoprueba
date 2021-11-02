@@ -14,7 +14,8 @@ class ComprasController < ApplicationController
 
   def create
     @compra = Compra.new( compra_params)
-    if @compra.save 
+    if @compra.save
+      flash[:notice] = 'compra agregada!' 
       redirect_to @compra
     else
       render :new

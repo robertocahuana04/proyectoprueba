@@ -13,21 +13,34 @@ class ReclamosController < ApplicationController
   end
 
   def create
-    @reclamo = Reclamo.new( reclamo_params)
-    if @reclamo.save 
-        redirect_to reclamo_path(@reclamo)
+    @reclamo = Reclamo.new(reclamo_params)
+    if @reclamo.save
+      flash[:notice] = 'reclamo agregado!'
+      redirect_to @reclamo
     else
-        render :new
+      render :new
     end
   end
 
   def update
     @reclamo = Reclamo.find(params[:id])
     if @reclamo.update(reclamo_params)
+      flash[:notice] = 'compra atualizada!'
       redirect_to @reclamo
     else
-      render "edit", status: :unprocessable_entity
+      render "edit"
     end
+  end
+
+  def destroy  
+    @reclamo = Reclamo.find(params[:id])   
+    if @reclamo.destroy 
+      flash[:notice] = '¡reclamo eliminado!'  
+      redirect_to reclamo_path 
+    else   
+      flash[:error] = '¡Error al eliminar este reclamo!'   
+      render "destroy"   
+    end   
   end
 
   private

@@ -24,7 +24,7 @@ class GenerosController < ApplicationController
     @genero = Genero.new(genero_params)   
     if @genero.save   
       flash[:notice] = 'genero agregado!'   
-      redirect_to (@genero)   
+      redirect_to @genero   
     else  
       render "new"   
     end   
@@ -33,6 +33,7 @@ class GenerosController < ApplicationController
   def update
     @genero = Genero.find(params[:id])
     if @genero.update(genero_params)
+      flash[:notice] = 'genero atualizado!'
       redirect_to @genero
     else
       render "edit", status: :unprocessable_entity

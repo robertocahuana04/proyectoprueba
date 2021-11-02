@@ -40,3 +40,4 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to root_url, :notice => "Has cerrado sesión correctamente"
   end  
 end
+

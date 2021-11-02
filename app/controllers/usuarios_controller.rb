@@ -33,6 +33,7 @@ class UsuariosController < ApplicationController
   def update
     @usuario = Usuario.find(params[:id])
     if @usuario.update(usuario_params)
+      flash[:notice] = 'usuario atualizado!'
       redirect_to @usuario
     else
       render "edit"

@@ -18,10 +18,11 @@ class RegistrodetrabajadoresController < ApplicationController
 
     def create
       @registrodetrabajadore = Registrodetrabajadore.new( registrodetrabajadore_params)
-      if @registrodetrabajadore.save 
-          redirect_to registrodetrabajadore_path(@registrodetrabajadore)
+      if @registrodetrabajadore.save
+        flash[:notice] = 'Trabajador agregado!' 
+        redirect_to @registrodetrabajadore
       else
-          render :new
+        render :new
       end
     end
     
@@ -29,6 +30,7 @@ class RegistrodetrabajadoresController < ApplicationController
     def update
       @registrodetrabajadore = Registrodetrabajadore.find(params[:id])
       if @registrodetrabajadore.update(registrodetrabajadore_params)
+        flash[:notice] = 'trabajador atualizado!'
         redirect_to @registrodetrabajadore
       else
         render 'edit'

@@ -1,9 +1,13 @@
-<%= simple_form_for @producto do |f| %>
-    <%= f.input :codigo %>
-    <%= f.input :nombre %>
-    <%= f.input :referencia %>
-    <%= f.input :stock %>
-    <%= f.input :remitente %>
-    <%= f.association :tipo, label_method: :tipo %>
-    <%= f.button :submit , class: 'btn btn-primary'%>
-<% end %>
+<section class="row">
+  <aside class="col-md-6">
+    <%= simple_form_for @producto do |f| %>
+      <%= f.input :codigo %>
+      <%= f.input :nombre %>
+      <%= f.input :referencia %>
+      <%= f.input :stock %>
+      <%= f.input :remitente %>
+      <%= f.association :tipo, label_method: :tipo %>
+      <%= f.button :submit , class: 'btn btn-primary'%>
+    <% end %>
+  </aside>
+</section>

@@ -39,12 +39,21 @@ class ProductosController < ApplicationController
   def update
     @producto = Producto.find(params[:id])
     if @producto.update(producto_params)
+      flash[:notice] = 'producto atualizado!'
       redirect_to @producto
     else
-      @producto = Producto.all
       render "edit", status: :unprocessable_entity
     end
   end
+
+  def self.search(search)
+    if search 
+      where('title LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+   
 
   def destroy  
     @producto = Producto.find(params[:id])   

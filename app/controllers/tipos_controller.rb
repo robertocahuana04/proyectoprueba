@@ -19,6 +19,7 @@ class TiposController < ApplicationController
   def create
     @tipo = Tipo.new(tipo_params)
     if @tipo.save 
+      flash[:notice] = 'tipo agregado!'
       redirect_to @tipo
     else
       render "new"
@@ -29,6 +30,7 @@ class TiposController < ApplicationController
   def update
     @tipo = Tipo.find(params[:id])
     if @tipo.update(tipo_params)
+      flash[:notice] = 'tipo atualizado!'
       redirect_to @tipo
     else
       render 'edit'
@@ -38,7 +40,7 @@ class TiposController < ApplicationController
   def destroy
     @tipo = Tipo.find(params[:id])
     if @tipo.destroy
-      flash[:success] = 'tipo was successfully deleted.'
+      flash[:success] = 'tipo eliminado.'
       redirect_to tipo_path
     else
       flash[:error] = 'Something went wrong'
