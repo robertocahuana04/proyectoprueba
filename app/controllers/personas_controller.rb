@@ -43,9 +43,8 @@ class PersonasController < ApplicationController
     @persona = Persona.find(params[:id])   
     if @persona.destroy 
       flash[:notice] = '¡persona eliminado!'  
-      redirect_to persona_path 
-    else   
-      flash[:error] = '¡Error al eliminar este persona!'   
+      redirect_to  @persona 
+    else  
       render "destroy"   
     end   
   end

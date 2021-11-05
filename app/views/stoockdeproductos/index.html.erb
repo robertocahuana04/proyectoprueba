@@ -23,9 +23,9 @@
       <td><%= stoockdeproducto.referencia%></td>
       <td><%= stoockdeproducto.tipo %></td>
       <td><%= stoockdeproducto.proveedor %></td>
-      <td><%= link_to 'Ver', stoockdeproducto_path(stoockdeproducto), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Ver', stoockdeproducto, class: 'btn btn-success' %></td>
       <td><%= link_to 'Editar', edit_stoockdeproducto_path(stoockdeproducto), class: 'btn btn-primary' %></td>
-      <td><%= link_to 'Eliminar', stoockdeproducto_path(stoockdeproducto),
+      <td><%= link_to 'Eliminar', stoockdeproducto,
       method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
   <% end %>

@@ -44,7 +44,7 @@ class GenerosController < ApplicationController
     @genero = Genero.find(params[:id])   
     if @genero.destroy 
       flash[:notice] = '¡genero eliminado!'  
-      redirect_to genero_path 
+      redirect_to  @genero 
     else   
       flash[:error] = '¡Error al eliminar este genero!'   
       render "destroy"   

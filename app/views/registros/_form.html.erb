@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-6">
+    <%= simple_form_for @registro do |f| %>
+      <%= f.input :identificacion %>
+      <%= f.input :nombre %>
+      <%= f.input :correo_electronico %>
+      <%= f.input :fecha_de_nacimiento %>
+      <%= f.input :direccion %>
+      <%= f.input :ciudad %>
+      <%= f.input :cargo%>
+      <%= f.button :submit , class: 'btn btn-primary'%>
+    <% end %>
+    </div>
+</div>

@@ -5,13 +5,12 @@ class ProveedoresController < ApplicationController
     @proveedor = Proveedor.new   
   end
 
-  #todo los registro SELET FRON proveedor
+  
   def index
     @proveedor = Proveedor.all
   end
 
   def show
-    #encontrar un registro por id
     @proveedor = Proveedor.find(params[:id])           
   end
 
@@ -23,7 +22,7 @@ class ProveedoresController < ApplicationController
     @proveedor = Proveedor.new(proveedor_params)   
     if @proveedor.save   
       flash[:notice] = 'Proveedor agregado!'   
-      redirect_to (@proveedor)   
+      redirect_to  @proveedor  
     else      
       render "new"   
     end   
@@ -39,11 +38,10 @@ class ProveedoresController < ApplicationController
   end
     
   def destroy 
-      #DELETE /proveedor/id  
       @proveedor = Proveedor.find(params[:id])   
-      if @proveedor.destroy   #Destroy eliminar el objeto de la BD
+      if @proveedor.destroy
         flash[:notice] = '¡Proveedor eliminado!'  
-        redirect_to proveedor_path 
+        redirect_to @proveedor 
       else    
         render "destroy"   
       end   

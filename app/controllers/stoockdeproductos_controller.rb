@@ -41,7 +41,7 @@ class StoockdeproductosController < ApplicationController
     @stoockdeproducto = Stoockdeproducto.find(params[:id])
     if @stoockdeproducto.destroy
       flash[:success] = 'stoockdeproducto was successfully deleted.'
-      redirect_to stoockdeproducto_path
+      redirect_to  @stoockdeproducto
     else
       redirect_to "destroy"
     end
@@ -53,11 +53,10 @@ class StoockdeproductosController < ApplicationController
     params.require(:stoockdeproducto).permit(
       :codigo,
       :nombre,
-      :correoelectronico,
-      :telefono,
-      :direccion,
-      :ciudad,
-      :destinario,
+      :cantidad_existente,
+      :referencia,
+      :tipo,
+      :proveedor,
     )
   end
 end

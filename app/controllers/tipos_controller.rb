@@ -41,7 +41,7 @@ class TiposController < ApplicationController
     @tipo = Tipo.find(params[:id])
     if @tipo.destroy
       flash[:success] = 'tipo eliminado.'
-      redirect_to tipo_path
+      redirect_to @tipo
     else
       flash[:error] = 'Something went wrong'
       redirect_to "destroy"

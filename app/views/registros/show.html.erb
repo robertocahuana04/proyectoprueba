@@ -1,0 +1,26 @@
+<h1 class="text-center , fs-1">Registro</h1>
+
+<section class="row">
+  <div class="container">
+    <%= link_to 'Editar', edit_registro_path(@registro), class: 'btn btn-primary' %>
+    <%= link_to 'Atras', registros_path, class: 'btn btn-primary' %>
+  </div>
+  <aside class="col-xs-6">
+    <dl class="well well-sm , tab-content">
+        <dt>identificacion:</dt>
+        <dd><%= @registro.identificacion%></dd>
+        <dt>nombre:</dt>
+        <dd><%= @registro.nombre%></dd>
+        <dt>correo_electronico:</dt>
+        <dd><%= @registro.correo_electronico%></dd>
+        <dt>fecha_de_nacimiento:</dt>
+        <dd><%= @registro.fecha_de_nacimiento%></dd>
+        <dt>direccion:</dt>
+        <dd><%= @registro.direccion%></dd>
+        <dt>ciudad:</dt>
+        <dd><%= @registro.ciudad%></dd>
+        <dt>cargo:</dt>
+        <dd><%= @registro.cargo%></dd>
+    </dl>
+  </aside>
+</section>

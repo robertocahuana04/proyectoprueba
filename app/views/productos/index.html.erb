@@ -26,9 +26,9 @@
       <td><%= producto.stock%></td>
       <td><%= producto.remitente %></td>
       <td><%= producto.tipo %></td>
-      <td><%= link_to 'Ver', producto_path(producto), class:"btn btn-success" %></td>
+      <td><%= link_to 'Ver', producto, class:"btn btn-success" %></td>
       <td><%= link_to 'Editar', edit_producto_path(producto), class:'btn btn-primary' %></td>
-      <td><%= link_to 'Eliminar', producto_path(producto),
+      <td><%= link_to 'Eliminar', producto,
       method: :delete, data: { confirm: 'Estas seguro?' }, :class =>"btn btn-danger" %></td>
     </tr>
   <% end %>

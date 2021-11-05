@@ -1,0 +1,36 @@
+<h1 class="text-center , fs-1">Listing registros</h1>
+
+<div>
+<%= link_to 'Crear registros', new_registro_path, class: 'btn btn-primary' %>
+</div>
+
+
+<table class = "table table-bordered table-hover">
+  <tr>
+    <th>identificacion</th>
+    <th>nombre</th>
+    <th>correo_electronico</th>
+    <th>fecha_de_nacimiento</th>
+    <th>direccion</th>
+    <th>ciudad</th>
+    <th>cargo</th>
+    <th colspan="7">Accion</th>
+  </tr>
+
+  <% @registro.each do |registro| %>
+    <tr>
+      <td><%= registro.identificacion%></td>
+      <td><%= registro.nombre %></td>
+      <td><%= registro.correo_electronico%></td>
+      <td><%= registro.fecha_de_nacimiento%></td>
+      <td><%= registro.direccion %></td>
+      <td><%= registro.ciudad%></td>
+      <td><%= registro.cargo%></td>
+      <td><%= link_to 'Ver', registro, class: 'btn btn-success' %></td>
+      <td><%= link_to 'Editar', edit_registro_path(registro), class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Eliminar', registro,
+      method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+

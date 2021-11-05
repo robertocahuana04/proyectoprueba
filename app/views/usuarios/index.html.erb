@@ -21,10 +21,10 @@
       <td><%= usuario.nombre %></td>
       <td><%= usuario.telefono %></td>
       <td><%= usuario.direccion %></td>
-      <td><%= link_to 'Ver', usuario_path(usuario), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Ver', usuario, class: 'btn btn-success' %></td>
       <td><%= link_to 'Editar', edit_usuario_path(usuario), class: 'btn btn-primary' %></td>
-      <td><%= link_to 'Eliminar', usuario_path(usuario), :method => :destroy,
-      :confirm => 'Estas seguro?', :class => 'btn btn-danger' %></td>
+      <td><%= link_to 'Elimirar', usuario,
+        method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
   <% end %>
 </table>

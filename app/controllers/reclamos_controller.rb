@@ -36,7 +36,7 @@ class ReclamosController < ApplicationController
     @reclamo = Reclamo.find(params[:id])   
     if @reclamo.destroy 
       flash[:notice] = '¡reclamo eliminado!'  
-      redirect_to reclamo_path 
+      redirect_to @reclamo 
     else   
       flash[:error] = '¡Error al eliminar este reclamo!'   
       render "destroy"   

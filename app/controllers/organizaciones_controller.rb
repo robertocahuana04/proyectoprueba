@@ -16,10 +16,10 @@ class OrganizacionesController < ApplicationController
     end
 
     def create
-      @organizacione = Organizacione.new( organizacione_params)
+      @organizacione = Organizacione.new(organizacione_params)
       if @organizacione.save
         flash[:notice] = 'organizacion agregado!' 
-        redirect_to organizacione_path(@organizacione)
+        redirect_to   @organizacione
       else
         render :new
       end
@@ -39,10 +39,9 @@ class OrganizacionesController < ApplicationController
     def destroy
       @organizacione = Organizacione.find(params[:id])
       if @organizacione.destroy
-        flash[:success] = 'tipo fue eliminado con éxito'
-        redirect_to organizacione_path
+        flash[:notice] = 'la organizacione fue eliminado con éxito'
+        redirect_to  @organizacione
       else
-        flash[:error] = 'Something went wrong'
         redirect_to "destroy"
       end
     end

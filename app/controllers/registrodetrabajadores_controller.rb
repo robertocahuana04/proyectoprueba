@@ -42,7 +42,7 @@ class RegistrodetrabajadoresController < ApplicationController
         @registrodetrabajadore = Registrodetrabajadore.find(params[:id])   
         if @registrodetrabajadore.destroy 
           flash[:notice] = '¡registrodetrabajadore eliminado!'  
-          redirect_to registrodetrabajadore_path 
+          redirect_to  @registrodetrabajadore
         else   
           flash[:error] = '¡Error al eliminar este registrodetrabajadore!'   
           render "destroy"   

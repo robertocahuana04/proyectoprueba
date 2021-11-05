@@ -20,9 +20,9 @@
       <td><%= registrodetrabajadore.edad %></td>
       <td><%= registrodetrabajadore.cargo %></td>
       <td><%= registrodetrabajadore.telefono %></td>
-      <td><%= link_to 'Ver', registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Ver', registrodetrabajadore, class: 'btn btn-success' %></td>
       <td><%= link_to 'Editar', edit_registrodetrabajadore_path(registrodetrabajadore), class: 'btn btn-primary' %></td>
-      <td><%= link_to 'Eliminar', registrodetrabajadore_path(registrodetrabajadore),
+      <td><%= link_to 'Eliminar', registrodetrabajadore,
       method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
   <% end %>

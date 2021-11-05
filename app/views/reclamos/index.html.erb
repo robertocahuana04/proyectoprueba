@@ -24,9 +24,9 @@
       <td><%= reclamo.producto_adquirido%></td>
       <td><%= reclamo.fecha_de_compra %></td>
       <td><%= reclamo.estado_del_producto %></td>
-      <td><%= link_to 'Ver', reclamo_path(reclamo), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Ver', reclamo, class: 'btn btn-success' %></td>
       <td><%= link_to 'Editar', edit_reclamo_path(reclamo), class: 'btn btn-primary' %></td>
-      <td><%= link_to 'Eliminar', reclamo_path(reclamo),
+      <td><%= link_to 'Eliminar', reclamo,
       method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %></td>
     </tr>
   <% end %>

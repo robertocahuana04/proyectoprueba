@@ -39,7 +39,7 @@ class ComprasController < ApplicationController
     @compra = Compra.find(params[:id])
     if @compra.destroy
       flash[:success] = 'compras was successfully deleted.'
-      redirect_to compra_path
+      redirect_to  @compra
     else
       flash[:error] = 'Something went wrong'
       render "destroy"

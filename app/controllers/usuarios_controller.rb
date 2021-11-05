@@ -44,9 +44,8 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.find(params[:id])   
     if @usuario.destroy 
       flash[:notice] = '¡usuario eliminado!'  
-      redirect_to usuario_path 
+      redirect_to  @usuario
     else   
-      flash[:error] = '¡Error al eliminar este usuario!'   
       render "destroy"   
     end   
   end

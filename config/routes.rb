@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   resources :usuarios
   resources :registrodetrabajadores
+  resources :registros
   resources :reclamos
   resources :personas
   resources :compras
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
   resources :organizaciones
   resources :stoockdeproductos 
   resources :proveedores
-  post "/proveedores/:id/edit" =>"proveedores#edit" 
   
   
   resources :productos

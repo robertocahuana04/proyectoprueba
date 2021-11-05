@@ -46,22 +46,12 @@ class ProductosController < ApplicationController
     end
   end
 
-  def self.search(search)
-    if search 
-      where('title LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
-   
-
   def destroy  
     @producto = Producto.find(params[:id])   
     if @producto.destroy 
       flash[:notice] = '¡Producto eliminado!'  
-      redirect_to producto_path 
-    else   
-      flash[:error] = '¡Error al eliminar este Producto!'   
+      redirect_to  @producto
+    else    
       render "destroy"   
     end   
   end
