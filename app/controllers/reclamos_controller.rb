@@ -12,6 +12,10 @@ class ReclamosController < ApplicationController
     @reclamo = Reclamo.find(params[:id])
   end
 
+  def edit
+    @reclamo = Reclamo.find(params[:id])
+  end
+
   def create
     @reclamo = Reclamo.new(reclamo_params)
     if @reclamo.save

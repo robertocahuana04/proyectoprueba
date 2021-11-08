@@ -11,6 +11,10 @@ class RegistrosController < ApplicationController
     def show
       @registro = Registro.find(params[:id])
     end
+
+    def edit
+      @registro = Registro.find(params[:id])
+    end
   
     def create
       @registro = Registro.new(registro_params)
