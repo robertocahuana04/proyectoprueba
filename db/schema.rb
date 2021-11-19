@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_004948) do
+ActiveRecord::Schema.define(version: 2021_11_18_194251) do
 
   create_table "compras", force: :cascade do |t|
     t.integer "codigo_producto"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_004948) do
     t.integer "tipo_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "foto"
   end
 
   create_table "proveedores", force: :cascade do |t|

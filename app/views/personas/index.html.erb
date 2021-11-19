@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
 <h1 class="text-center , fs-1">Listing persona</h1>
 
-
+<div>
+  <%= link_to 'Crear personas', new_persona_path, class: 'btn btn-primary' %>
+  <%= link_to "generos", generos_path, class: "btn btn-primary" %>
+</div><br>
 
 <table class = "table table-bordered table-hover">
-  <div>
-    <%= link_to 'Crear personas', new_persona_path, class: 'btn btn-primary' %>
-  </div>
   <tr>
     <th>cedula</th>
     <th>genero</th>

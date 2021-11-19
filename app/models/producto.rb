@@ -1,3 +1,4 @@
 class Producto < ApplicationRecord
-  belongs_to :tipo
+  mount_uploader :foto, FotoUploader
+  belongs_to :tipo 
 end

@@ -1,11 +1,9 @@
 <h1 class="text-center , fs-1">Listing productos</h1>
 
 <div>
-<%= link_to 'Crear producto', new_producto_path, class: 'btn btn-primary' %>
-<%= link_to "landing", root_path, class: 'btn btn-primary' %>
-</div>
-
-
+<%= link_to "Crear producto", new_producto_path, class:'btn btn-primary' %>
+<%= link_to "Crear tipos", tipos_path, class: "btn btn-primary" %>
+</div><br>
 
 <table class = "table table-bordered table-hover">
   <tr>
@@ -15,6 +13,7 @@
     <th>stock</th>
     <th>remitente</th>
     <th>tipo</th>
+    <th>foto</th>
     <th colspan="6">Accion</th>
   </tr>
 
@@ -26,6 +25,7 @@
       <td><%= producto.stock%></td>
       <td><%= producto.remitente %></td>
       <td><%= producto.tipo %></td>
+      <td><%= link_to "Ver foto", producto, :class => 'enlaces' %></td>
       <td><%= link_to 'Ver', producto, class:"btn btn-success" %></td>
       <td><%= link_to 'Editar', edit_producto_path(producto), class:'btn btn-primary' %></td>
       <td><%= link_to 'Eliminar', producto,
@@ -33,7 +33,6 @@
     </tr>
   <% end %>
 </table>
-
 
 
 

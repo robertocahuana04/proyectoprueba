@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   def dasboard
   end
 
-  def landing
+  def index
   end  
 end

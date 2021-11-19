@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="text-center , fs-1"> Ver personas</h1>
 
+<div>
+  <%= link_to 'Atras', personas_path, class: 'btn btn-primary' %>
+</div><br>
+
 <section class="row">
-  <div class="container">
-    <%= link_to 'Editar', edit_persona_path(@persona), class: 'btn btn-primary' %>
-    <%= link_to 'Atras', personas_path, class: 'btn btn-primary' %>
-  </div>
   <aside class="col-md-4">
     <dl class="well well-sm , tab-content">
       <dt>cedula:</dt>

@@ -65,7 +65,8 @@ class ProductosController < ApplicationController
       :referencia,
       :stock,
       :remitente,
-      :tipo_id
+      :tipo_id,
+      :foto
     )
   end
   

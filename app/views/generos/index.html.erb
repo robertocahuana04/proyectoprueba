@@ -1,9 +1,8 @@
 <h1 class="text-center , fs-1">Listing generos</h1>
 
 <div>
-<%= link_to 'crear genero', new_genero_path, class: 'btn btn-primary'  %>
-</div>
-
+  <%= link_to 'crear genero', new_genero_path, class: 'btn btn-primary'  %>
+</div><br>
 
 <table class = "table table-bordered table-hover">
   <tr>
@@ -13,29 +12,7 @@
 
   <% @genero.each do |genero| %>
     <tr>
-      <td><%= genero.genero %></td>
-      <td>
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary">Acciones</button>
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">
-              <%= link_to 'Ver', genero, class: 'btn btn-success' %>
-            </a></li>
-            <li><a href="#">
-              <%= link_to 'Editar', edit_genero_path(genero), class: 'btn btn-primary' %>
-            </a></li>
-            <li><a href="#">
-              <%= link_to 'Eliminar', genero,
-              method: :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn btn-danger' %>
-            </a></li>
-          </ul>
-        </div>
-      </td>
-
-
+      <td><%= genero.genero %></td> 
       <td><%= link_to 'Ver', genero, class: 'btn btn-success' %></td>
       <td><%= link_to 'Editar', edit_genero_path(genero), class: 'btn btn-primary' %></td>
       <td><%= link_to 'Eliminar', genero,
@@ -43,3 +20,4 @@
     </tr>
   <% end %>
 </table>
+
