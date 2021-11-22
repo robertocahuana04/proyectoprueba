@@ -1,0 +1,17 @@
+.flex-direction{
+   display: flex;
+   flex-flow: row wrap;
+}
+  
+.flex-item{
+  border: solid 1px;
+  text-align: center;
+  height: 99px;
+  padding: 1px;
+  margin: 6px;
+}
+
+.fotos{
+    height: 100%;
+    width: 100%;
+}

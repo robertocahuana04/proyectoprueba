@@ -1,0 +1,16 @@
+<section class = "row">
+    <aside class = "col-md-4">
+      <%= render "layouts/aside" %>
+    </aside>
+    <article class = "col-md-8">
+      <div class="well">
+        <div class="flex-direction">
+          <% @productos.each do |producto| %>
+            <div class="flex-item">
+              <%= image_tag(producto.foto_url, :class => 'fotos') if producto.foto? %>
+            </div>
+          <% end %>  
+        </div>
+      </div>
+    </article>
+</section>

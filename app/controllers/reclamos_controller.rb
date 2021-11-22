@@ -5,7 +5,7 @@ class ReclamosController < ApplicationController
   end
 
   def index
-    @reclamo = Reclamo.all
+    @reclamos = Reclamo.all
   end
 
   def show

@@ -6,7 +6,7 @@ class UsuariosController < ApplicationController
   
   # Método GET para obtener todos los usuarios de la base de datos
   def index
-    @usuario = Usuario.all
+    @usuarios = Usuario.all
   end
   
   #encontrar un registro por id

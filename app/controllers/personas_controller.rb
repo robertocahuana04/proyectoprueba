@@ -6,7 +6,7 @@ class PersonasController < ApplicationController
   end
 
   def index
-    @persona = Persona.all
+    @personas = Persona.all
   end
 
   def show

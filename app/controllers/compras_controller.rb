@@ -5,7 +5,7 @@ class ComprasController < ApplicationController
   end
 
   def index
-    @compra = Compra.all
+    @compras = Compra.all
   end
 
   def show

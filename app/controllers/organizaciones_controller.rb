@@ -4,7 +4,7 @@ class OrganizacionesController < ApplicationController
     end
 
     def index
-      @organizacione = Organizacione.all
+      @organizaciones = Organizacione.all
     end
 
     def show

@@ -6,7 +6,7 @@ class GenerosController < ApplicationController
   
   # Método GET para obtener todos los generos de la base de datos
   def index
-    @genero = Genero.all
+    @generos = Genero.all
   end
   
   #encontrar un registro por id

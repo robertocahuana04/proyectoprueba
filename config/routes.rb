@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: "home#dasboard"
+  root to: "home#index"
   resources :productos
   get 'productos/index'
   get 'productos/show'

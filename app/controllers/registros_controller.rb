@@ -5,7 +5,7 @@ class RegistrosController < ApplicationController
     end
   
     def index
-      @registro = Registro.all
+      @registros = Registro.all
     end
   
     def show

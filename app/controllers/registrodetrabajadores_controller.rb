@@ -1,7 +1,7 @@
 class RegistrodetrabajadoresController < ApplicationController
 
     def index
-      @registrodetrabajadore = Registrodetrabajadore.all   
+      @registrodetrabajadores = Registrodetrabajadore.all   
     end
 
     def show

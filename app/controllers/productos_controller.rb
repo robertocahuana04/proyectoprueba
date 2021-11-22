@@ -11,7 +11,7 @@ class ProductosController < ApplicationController
 
    # Método GET para obtener todos los productos de la base de datos
   def index
-    @producto = Producto.all
+    @productos = Producto.all
   end
 
   #encontrar un registro por id

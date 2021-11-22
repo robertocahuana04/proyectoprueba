@@ -5,7 +5,7 @@ class TiposController < ApplicationController
   end
 
   def index
-    @tipo = Tipo.all
+    @tipos = Tipo.all
   end
 
   def show

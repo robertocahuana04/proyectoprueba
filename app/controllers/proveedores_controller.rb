@@ -7,7 +7,7 @@ class ProveedoresController < ApplicationController
 
   
   def index
-    @proveedor = Proveedor.all
+    @proveedores = Proveedor.all
   end
 
   def show

@@ -5,7 +5,7 @@ class StoockdeproductosController < ApplicationController
   end
 
   def index
-    @stoockdeproducto = Stoockdeproducto.all
+    @stoockdeproductos = Stoockdeproducto.all
   end
 
   def show
